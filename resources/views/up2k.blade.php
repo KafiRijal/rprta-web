@@ -42,8 +42,8 @@
                             <img src="assets/img/news/05.jpg" alt="img">
                         </div>
                         <div class="news-content">
-                            <h3><a href="news-details.html">Top 5 Tarot Decks for the Tarot World Summit</a></h3>
-                            <a href="news-details.html" class="theme-btn-2">Lihat Produk <i
+                            <h3><a href="{{ url('detailUp2k') }}">Top 5 Tarot Decks for the Tarot World Summit</a></h3>
+                            <a href="{{ url('detailUp2k') }}" class="theme-btn-2">Lihat Produk <i
                                     class="fa-regular fa-arrow-right-long"></i></a>
                         </div>
                     </div>

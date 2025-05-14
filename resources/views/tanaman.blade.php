@@ -44,7 +44,7 @@
                                         <img src="assets/img/shop-list/01.png" alt="img">
                                     </div>
                                     <div class="shop-list-content">
-                                        <h3><a href="shop-details.html">Castle In The Sky</a></h3>
+                                        <h3><a href="{{ url('detailTanaman') }}">Castle In The Sky</a></h3>
                                         <p>
                                             Vestibulum consectetur fringilla tellus, et pulvinar massa tempus nec. Fusce
                                             nibh nibh, consectetur vitae felis quis, sagittis ullamcorper enim. Nullam

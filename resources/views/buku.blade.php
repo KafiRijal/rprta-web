@@ -79,11 +79,11 @@
                                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                         <div class="shop-box-items">
                                             <div class="book-thumb center">
-                                                <a href="shop-details.html"><img src="assets/img/book/01.png"
+                                                <a href="{{ url('detailBuku') }}"><img src="assets/img/book/01.png"
                                                         alt="img"></a>
                                             </div>
                                             <div class="shop-content">
-                                                <h3><a href="shop-details.html">Simple Things You Save BOOK</a></h3>
+                                                <h3><a href="{{ url('detailBuku') }}">Simple Things You Save BOOK</a></h3>
                                             </div>
                                         </div>
                                     </div>

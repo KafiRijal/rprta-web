@@ -1,4 +1,3 @@
-<!-- Footer Section Start -->
 <footer class="footer-section footer-bg">
     <div class="container">
         <div class="contact-info-area">

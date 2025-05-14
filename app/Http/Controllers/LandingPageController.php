@@ -38,4 +38,16 @@ class LandingPageController extends Controller
     {
         return view('daftar');
     }
+    public function detailBuku()
+    {
+        return view('buku-detail');
+    }
+    public function detailUp2k()
+    {
+        return view('up2k-detail');
+    }
+    public function detailTanaman()
+    {
+        return view('tanaman-detail');
+    }
 }
