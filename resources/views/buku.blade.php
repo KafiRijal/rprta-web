@@ -3,12 +3,6 @@
 @section('content')
     <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
-        <div class="book1">
-            <img src="assets/img/hero/book1.png" alt="book">
-        </div>
-        <div class="book2">
-            <img src="assets/img/hero/book2.png" alt="book">
-        </div>
         <div class="container">
             <div class="page-heading">
                 <h1>Koleksi Perpustakaan</h1>
@@ -65,7 +59,7 @@
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="pills-Biographies-tab" data-bs-toggle="pill"
                                                 data-bs-target="#pills-Biographies" type="button" role="tab"
-                                                aria-controls="pills-Biographies" aria-selected="false">Umum</button>
+                                                aria-controls="pills-Biographies" aria-selected="false">Dewasa</button>
                                     </ul>
                                 </div>
                             </div>
