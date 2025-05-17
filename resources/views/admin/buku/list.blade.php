@@ -25,7 +25,7 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title mb-0">Daftar Buku</h5>
                         <div class="button">
-                            <a href="{{ url('buku/tambah_buku') }}"><button type="submit"
+                            <a href="{{ url('admin/buku/tambah_buku') }}"><button type="submit"
                                     class="btn btn-primary">Tambah</button></a>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('buku/_list_buku') }}",
+                    url: "{{ url('admin/buku/_list_buku') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -102,7 +102,7 @@
                             var deleteLink =
                                 `<a href="#" class="ms-2 btn btn-danger btn-sm delete-btn" data-id="${data}"><i class="fas fa-trash"></i></a>`;
                             var editLink =
-                                `<a href="{{ url('buku/edit_buku') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
+                                `<a href="{{ url('admin/buku/edit_buku') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
                             return editLink + ' ' + deleteLink;
                         }
                     }
@@ -126,7 +126,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('buku/_delete_buku/') }}/${Id}`,
+                        url: `{{ url('admin/buku/_delete_buku/') }}/${Id}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

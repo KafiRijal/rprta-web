@@ -3,47 +3,38 @@
 
         <div id="sidebar-menu">
             <div class="logo-box">
-                <a href="{{ url('/') }}" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="{{ asset('assets_portal/img/logo-2.png') }}" alt="" height="48">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('assets_portal/img/logo-2.png') }}" alt="" height="50">
-                    </span>
-                </a>
-                <a href="{{ url('/') }}" class="logo logo-dark">
-                    <span class="logo-sm">
-                        <img src="{{ asset('assets_portal/img/logo-2.png') }}" alt="" height="48">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="{{ asset('assets_portal/img/logo-2.png') }}" alt="" height="50">
-                    </span>
-                </a>
+                <div class="logo d-flex align-items-center">
+                    <a href="{{ url('/admin/dashboard') }}" class="header-logo d-flex align-items-center">
+                        <img src="{{ asset('assets/img/logo/rptra.png') }}" alt="logo-img" style="height: 40px;">
+                        <span class="logo-text d-xl-inline ms-2" style="color:black; font-weight:300px;"><b>RPTRA AN
+                                NUR</b></span>
+                    </a>
+                </div>
             </div>
 
             <ul id="side-menu">
                 <li class="menu-title"></li>
                 <li>
-                    <a href="{{ url('/dashboard') }}" class="tp-link">
+                    <a href="{{ url('/admin/dashboard') }}" class="tp-link">
                         <i data-feather="home"></i>
                         <span> Dashboard </span>
                     </a>
                 </li>
 
-                @if (Auth::user()->role->id == 1)
-                    <li class="menu-title mt-2">Orang Tua</li>
+                @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2)
+                    <li class="menu-title mt-2">Petugas</li>
 
                     <li>
-                        <a href="{{ url('/orangtua/anak') }}" class="tp-link">
-                            <i data-feather="user-plus"></i>
-                            <span> Anak </span>
+                        <a href="{{ url('/admin/buku') }}" class="tp-link">
+                            <i data-feather="book"></i>
+                            <span> Buku </span>
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ url('/monitoring') }}" class="tp-link">
-                            <i data-feather="columns"></i>
-                            <span> Monitoring </span>
+                        <a href="{{ url('/admin/tanaman') }}" class="tp-link">
+                            <i data-feather="slack"></i>
+                            <span> Tanaman </span>
                         </a>
                     </li>
                 @endif
@@ -70,13 +61,6 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('/buku') }}" class="tp-link">
-                            <i data-feather="book"></i>
-                            <span> Buku </span>
-                        </a>
-                    </li>
-
-                    <li>
                         <a href="{{ url('/faq') }}" class="tp-link">
                             <i data-feather="package"></i>
                             <span> FAQ </span>
@@ -89,7 +73,6 @@
                             <span> Kontak Masuk </span>
                         </a>
                     </li>
-
                 @endif
             </ul>
 

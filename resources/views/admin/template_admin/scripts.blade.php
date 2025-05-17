@@ -35,5 +35,21 @@
                 ['insert', ['link', 'picture']],
             ]
         });
+        $('#editor1').summernote({
+            toolbar: [
+                ['font', ['bold', 'underline', 'italic', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol']],
+                ['insert', ['link', 'picture']],
+            ]
+        });
+        $('#editor2').summernote({
+            toolbar: [
+                ['font', ['bold', 'underline', 'italic', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol']],
+                ['insert', ['link', 'picture']],
+            ]
+        });
     });
 </script>

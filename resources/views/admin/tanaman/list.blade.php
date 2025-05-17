@@ -8,13 +8,13 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Monitoring</h4>
+                <h4 class="fs-18 fw-semibold m-0">Tanaman</h4>
             </div>
 
             <div class="text-end">
                 <ol class="breadcrumb m-0 py-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
-                    <li class="breadcrumb-item active">Daftar Monitoring</li>
+                    <li class="breadcrumb-item active">Daftar Tanaman</li>
                 </ol>
             </div>
         </div>
@@ -23,23 +23,20 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title mb-0">Daftar Monitoring</h5>
+                        <h5 class="card-title mb-0">Daftar Tanaman</h5>
                         <div class="button">
-                            <a href="{{ url('monitoring/_export') }}" class="me-2"><button type="submit"
-                                    class="btn btn-info">Export</button></a>
-                            <a href="{{ url('monitoring/tambah_monitoring') }}"><button type="submit"
-                                    class="btn btn-primary {{ Auth::user()->role->id == 2 ? 'd-none' : '' }}">Tambah</button></a>
+                            <a href="{{ url('admin/tanaman/tambah_tanaman') }}"><button type="submit"
+                                    class="btn btn-primary">Tambah</button></a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        <table id="monitoringTable" class="table table-bordered table-bordered dt-responsive nowrap">
+                        <table id="tanamanTable" class="table table-bordered table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Monitoring</th>
-                                    <th>Tanggal Monitoring</th>
-                                    <th class="text-center">Status</th>
+                                    <th>Nama</th>
+                                    <th>Deskripsi</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -54,11 +51,11 @@
 @section('template_scripts_admin')
     <script>
         $(document).ready(function() {
-            $('#monitoringTable').DataTable({
+            $('#tanamanTable').DataTable({
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('monitoring/_list_monitoring') }}",
+                    url: "{{ url('admin/tanaman/_list_tanaman') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -71,36 +68,16 @@
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
+                    }, {
+                        data: 'nama',
                     },
                     {
-                        data: 'nama_anak',
-                    },
-                    {
-                        data: 'created_at',
+                        data: 'deskripsi',
                         render: function(data, type, row) {
-                            if (data) {
-                                var date = new Date(data);
-                                var day = ('0' + date.getDate()).slice(-
-                                    2);
-                                var month = ('0' + (date.getMonth() + 1)).slice(-
-                                    2);
-                                var year = date.getFullYear();
-                                return day + '-' + month + '-' + year;
+                            if (data.length > 40) {
+                                return data.substring(0, 40) + '...';
                             }
                             return data;
-                        }
-                    },
-                    {
-                        data: 'status',
-                        className: "text-center",
-                        render: function(data, type, row, meta) {
-                            if (data === 'Diproses') {
-                                return `<span class="badge bg-warning-subtle text-warning fw-semibold">${data}</span>`;
-                            } else if (data === 'Selesai') {
-                                return `<span class="badge bg-info-subtle text-info fw-semibold">${data}</span>`;
-                            } else {
-                                return `-`;
-                            }
                         }
                     },
                     {
@@ -111,22 +88,15 @@
                             var deleteLink =
                                 `<a href="#" class="ms-2 btn btn-danger btn-sm delete-btn" data-id="${data}"><i class="fas fa-trash"></i></a>`;
                             var editLink =
-                                `<a href="{{ url('monitoring/edit_monitoring') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
-                            var feedbackLink =
-                                `<a href="{{ url('monitoring/feedback') }}/${data}" class="ms-2 btn btn-info btn-sm edit-btn"><i class="fas fa-comment-medical"></i></a>`;
-
-                            if ("{{ Auth::user()->role->id }}" == 2) {
-                                return feedbackLink;
-                            } else {
-                                return feedbackLink + ' ' + editLink + ' ' + deleteLink;
-                            }
+                                `<a href="{{ url('admin/tanaman/edit_tanaman') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
+                            return editLink + ' ' + deleteLink;
                         }
                     }
                 ]
             });
         });
 
-        $('#monitoringTable').on('click', '.delete-btn', function(e) {
+        $('#tanamanTable').on('click', '.delete-btn', function(e) {
             e.preventDefault();
             var Id = $(this).data('id');
             Swal.fire({
@@ -142,7 +112,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('monitoring/_delete_monitoring/') }}/${Id}`,
+                        url: `{{ url('admin/tanaman/_delete_tanaman/') }}/${Id}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -157,7 +127,7 @@
                                     confirmButton: 'btn btn-primary',
                                 },
                             });
-                            $('#monitoringTable').DataTable().ajax.reload();
+                            $('#tanamanTable').DataTable().ajax.reload();
                         },
                         error: function(error) {
                             Swal.fire({
