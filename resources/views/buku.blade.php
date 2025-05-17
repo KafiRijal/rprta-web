@@ -1,7 +1,6 @@
 @extends('template/main')
 
 @section('content')
-    <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="page-heading">
@@ -25,7 +24,6 @@
         </div>
     </div>
 
-    <!-- Shop Section Start -->
     <section class="shop-section fix section-padding">
         <div class="container">
             <div class="shop-default-wrapper">
@@ -60,6 +58,7 @@
                                             <button class="nav-link" id="pills-Biographies-tab" data-bs-toggle="pill"
                                                 data-bs-target="#pills-Biographies" type="button" role="tab"
                                                 aria-controls="pills-Biographies" aria-selected="false">Dewasa</button>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
