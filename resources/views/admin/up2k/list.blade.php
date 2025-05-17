@@ -8,13 +8,13 @@
 
         <div class="py-3 d-flex align-items-sm-center flex-sm-row flex-column">
             <div class="flex-grow-1">
-                <h4 class="fs-18 fw-semibold m-0">Anak</h4>
+                <h4 class="fs-18 fw-semibold m-0">UP2K</h4>
             </div>
 
             <div class="text-end">
                 <ol class="breadcrumb m-0 py-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
-                    <li class="breadcrumb-item active">Daftar Anak</li>
+                    <li class="breadcrumb-item active">Daftar UP2K</li>
                 </ol>
             </div>
         </div>
@@ -23,19 +23,21 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h5 class="card-title mb-0">Daftar Anak</h5>
-                        <a href="{{ url('/orangtua/anak/tambah_anak') }}"><button type="submit"
-                                class="btn btn-primary">Tambah</button></a>
+                        <h5 class="card-title mb-0">Daftar UP2K</h5>
+                        <div class="button">
+                            <a href="{{ url('admin/up2k/tambah_up2k') }}"><button type="submit"
+                                    class="btn btn-primary">Tambah</button></a>
+                        </div>
                     </div>
 
                     <div class="card-body">
-                        <table id="anakTable" class="table table-bordered table-bordered dt-responsive nowrap">
+                        <table id="up2kTable" class="table table-bordered table-bordered dt-responsive nowrap w-100">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Anak</th>
-                                    <th>Tanggal Lahir</th>
-                                    <th>Jenis Kelamin</th>
+                                    <th>Nama Produk</th>
+                                    <th>Nama Penjual</th>
+                                    <th>Kategori</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
@@ -50,11 +52,11 @@
 @section('template_scripts_admin')
     <script>
         $(document).ready(function() {
-            $('#anakTable').DataTable({
+            $('#up2kTable').DataTable({
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('orangtua/anak/_list_anak') }}",
+                    url: "{{ url('admin/up2k/_list_up2k') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -67,27 +69,26 @@
                         render: function(data, type, row, meta) {
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }
-                    },
-                    {
-                        data: 'nama',
-                    },
-                    {
-                        data: 'tanggal_lahir',
+                    }, {
+                        data: 'nama_produk',
                         render: function(data, type, row) {
-                            if (data) {
-                                var date = new Date(data);
-                                var day = ('0' + date.getDate()).slice(-
-                                    2);
-                                var month = ('0' + (date.getMonth() + 1)).slice(-
-                                    2);
-                                var year = date.getFullYear();
-                                return day + '-' + month + '-' + year;
+                            if (data.length > 16) {
+                                return data.substring(0, 16) + '...';
                             }
                             return data;
                         }
                     },
                     {
-                        data: 'jenis_kelamin',
+                        data: 'nama',
+                        render: function(data, type, row) {
+                            if (data.length > 16) {
+                                return data.substring(0, 16) + '...';
+                            }
+                            return data;
+                        }
+                    },
+                    {
+                        data: 'kategori',
                     },
                     {
                         data: "id",
@@ -97,7 +98,7 @@
                             var deleteLink =
                                 `<a href="#" class="ms-2 btn btn-danger btn-sm delete-btn" data-id="${data}"><i class="fas fa-trash"></i></a>`;
                             var editLink =
-                                `<a href="{{ url('orangtua/anak/edit_anak') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
+                                `<a href="{{ url('admin/up2k/edit_up2k') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
                             return editLink + ' ' + deleteLink;
                         }
                     }
@@ -105,7 +106,7 @@
             });
         });
 
-        $('#anakTable').on('click', '.delete-btn', function(e) {
+        $('#up2kTable').on('click', '.delete-btn', function(e) {
             e.preventDefault();
             var Id = $(this).data('id');
             Swal.fire({
@@ -121,7 +122,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('orangtua/anak/_delete_anak/') }}/${Id}`,
+                        url: `{{ url('admin/up2k/_delete_up2k/') }}/${Id}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -136,7 +137,7 @@
                                     confirmButton: 'btn btn-primary',
                                 },
                             });
-                            $('#anakTable').DataTable().ajax.reload();
+                            $('#up2kTable').DataTable().ajax.reload();
                         },
                         error: function(error) {
                             Swal.fire({

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LandingPageController, AuthController, DashboardController, UsermanagementController, ProfileController, BukuController, TanamanController};
+use App\Http\Controllers\{LandingPageController, AuthController, DashboardController, UsermanagementController, ProfileController, BukuController, TanamanController, Up2kController};
 use App\Http\Middleware\{RoleMiddleware, RedirectIfAuthenticated};
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
@@ -52,6 +52,16 @@ Route::prefix('admin')->group(function () {
         Route::post('_list_tanaman', [TanamanController::class, '_list_tanaman'])->name('_list_tanaman');
         Route::post('_edit_tanaman', [TanamanController::class, '_edit_tanaman'])->name('_edit_tanaman');
         Route::delete('_delete_tanaman/{id}', [TanamanController::class, '_delete_tanaman'])->name('_delete_tanaman');
+    });
+
+    Route::prefix('up2k')->middleware(['auth', RoleMiddleware::class . ':1,2'])->group(function () {
+        Route::get('', [Up2kController::class, 'up2k'])->name('up2k');
+        Route::get('tambah_up2k', [Up2kController::class, 'tambah_up2k'])->name('tambah_up2k');
+        Route::get('edit_up2k/{id}', [Up2kController::class, 'edit_up2k'])->name('edit_up2k');
+        Route::post('_tambah_up2k', [Up2kController::class, '_tambah_up2k'])->name('_tambah_up2k');
+        Route::post('_list_up2k', [Up2kController::class, '_list_up2k'])->name('_list_up2k');
+        Route::post('_edit_up2k', [Up2kController::class, '_edit_up2k'])->name('_edit_up2k');
+        Route::delete('_delete_up2k/{id}', [Up2kController::class, '_delete_up2k'])->name('_delete_up2k');
     });
 
     Route::prefix('profile')->middleware('auth')->group(function () {

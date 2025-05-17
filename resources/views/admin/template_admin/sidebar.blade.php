@@ -37,6 +37,13 @@
                             <span> Tanaman </span>
                         </a>
                     </li>
+
+                    <li>
+                        <a href="{{ url('/admin/up2k') }}" class="tp-link">
+                            <i data-feather="shopping-cart"></i>
+                            <span> UP2K </span>
+                        </a>
+                    </li>
                 @endif
 
                 @if (Auth::user()->role->id == 2)
