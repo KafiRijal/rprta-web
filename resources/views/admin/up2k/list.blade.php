@@ -25,6 +25,8 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title mb-0">Daftar UP2K</h5>
                         <div class="button">
+                            <a href="{{ url('admin/up2k/_export') }}" class="me-2"><button type="submit"
+                                    class="btn btn-info">Export</button></a>
                             <a href="{{ url('admin/up2k/tambah_up2k') }}"><button type="submit"
                                     class="btn btn-primary">Tambah</button></a>
                         </div>

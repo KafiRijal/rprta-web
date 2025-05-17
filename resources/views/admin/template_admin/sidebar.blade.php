@@ -46,22 +46,11 @@
                     </li>
                 @endif
 
-                @if (Auth::user()->role->id == 2)
-                    <li class="menu-title mt-2">Tenaga Medis</li>
-
-                    <li>
-                        <a href="{{ url('/monitoring') }}" class="tp-link">
-                            <i data-feather="columns"></i>
-                            <span> Monitoring </span>
-                        </a>
-                    </li>
-                @endif
-
                 @if (Auth::user()->role->id == 1)
                     <li class="menu-title mt-2">Administrator</li>
 
                     <li>
-                        <a href="{{ url('/usermanagement') }}" class="tp-link">
+                        <a href="{{ url('admin/usermanagement') }}" class="tp-link">
                             <i data-feather="users"></i>
                             <span> User Management </span>
                         </a>

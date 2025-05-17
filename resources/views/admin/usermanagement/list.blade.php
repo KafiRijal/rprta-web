@@ -25,7 +25,7 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title mb-0">Daftar User</h5>
                         <div class="button">
-                            <a href="{{ url('usermanagement/tambah_user') }}"><button type="submit"
+                            <a href="{{ url('admin/usermanagement/tambah_user') }}"><button type="submit"
                                     class="btn btn-primary">Tambah</button></a>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('usermanagement/_list_user') }}",
+                    url: "{{ url('admin/usermanagement/_list_user') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -103,7 +103,7 @@
                             var deleteLink =
                                 `<a href="#" class="ms-2 btn btn-danger btn-sm delete-btn" data-id="${data}"><i class="fas fa-trash"></i></a>`;
                             var editLink =
-                                `<a href="{{ url('usermanagement/edit_user') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
+                                `<a href="{{ url('admin/usermanagement/edit_user') }}/${data}" class="ms-2 btn btn-primary btn-sm edit-btn"><i class="far fa-edit"></i></a>`;
 
                             return editLink + ' ' + deleteLink;
                         }
@@ -128,7 +128,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('usermanagement/_delete_user/') }}/${Id}`,
+                        url: `{{ url('admin/usermanagement/_delete_user/') }}/${Id}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

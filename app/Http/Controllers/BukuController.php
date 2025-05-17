@@ -6,6 +6,8 @@ use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\BukuExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BukuController extends Controller
 {
@@ -207,5 +209,25 @@ class BukuController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
+    }
+
+    public function _export()
+    {
+        $buku = Buku::with('kategori:id,nama')->get();
+
+        $data = $buku->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'judul' => $item->judul ?? '-',
+                'penulis' => $item->penulis,
+                'penerbit' => $item->penerbit,
+                'kategori' => $item->kategori->nama,
+                'jumlah' => $item->jumlah,
+                'deskripsi' => $item->deskripsi,
+                'image' => $item->image ? asset('image_buku/' . $item->image) : '',
+            ];
+        });
+
+        return Excel::download(new BukuExport($data), 'Data Buku.xlsx');
     }
 }

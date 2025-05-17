@@ -6,6 +6,8 @@ use App\Models\Up2k;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\Up2kExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Up2kController extends Controller
 {
@@ -226,5 +228,29 @@ class Up2kController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
+    }
+
+    public function _export()
+    {
+        $up2k = Up2k::with('kategori:id,nama')->get();
+
+        $data = $up2k->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'nama_produk' => $item->nama_produk,
+                'nama' => $item->nama,
+                'telepon' => $item->telepon,
+                'kategori' => $item->kategori->nama,
+                'perizinan' => $item->perizinan,
+                'pemasaran' => $item->pemasaran,
+                'keterangan' => $item->keterangan,
+                'kecamatan' => $item->kecamatan,
+                'kelurahan' => $item->kelurahan,
+                'alamat' => $item->alamat,
+                'image' => $item->image ? asset('image_up2k/' . $item->image) : '',
+            ];
+        });
+
+        return Excel::download(new Up2kExport($data), 'Data UP2K.xlsx');
     }
 }

@@ -6,6 +6,8 @@ use App\Models\Tanaman;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\TanamanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TanamanController extends Controller
 {
@@ -141,7 +143,6 @@ class TanamanController extends Controller
             $tanaman = Tanaman::findOrFail($request->id);
 
             if ($request->hasFile('image')) {
-                // Hapus gambar lama jika ada
                 if ($tanaman->image && file_exists(public_path('image_tanaman/' . $tanaman->image))) {
                     unlink(public_path('image_tanaman/' . $tanaman->image));
                 }
@@ -196,5 +197,22 @@ class TanamanController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
+    }
+
+    public function _export()
+    {
+        $tanaman = Tanaman::get();
+
+        $data = $tanaman->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'deskripsi' => $item->deskripsi,
+                'manfaat' => $item->manfaat,
+                'fakta_unik' => $item->fakta_unik,
+                'image' => $item->image ? asset('image_tanaman/' . $item->image) : '',
+            ];
+        });
+
+        return Excel::download(new TanamanExport($data), 'Data Tanaman.xlsx');
     }
 }

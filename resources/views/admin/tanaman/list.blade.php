@@ -25,6 +25,8 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h5 class="card-title mb-0">Daftar Tanaman</h5>
                         <div class="button">
+                            <a href="{{ url('admin/tanaman/_export') }}" class="me-2"><button type="submit"
+                                    class="btn btn-info">Export</button></a>
                             <a href="{{ url('admin/tanaman/tambah_tanaman') }}"><button type="submit"
                                     class="btn btn-primary">Tambah</button></a>
                         </div>

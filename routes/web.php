@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{LandingPageController, AuthController, DashboardController, UsermanagementController, ProfileController, BukuController, TanamanController, Up2kController};
 use App\Http\Middleware\{RoleMiddleware, RedirectIfAuthenticated};
+use App\Models\Up2k;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 Route::get('tentang', [LandingPageController::class, 'tentang'])->name('tentang');
@@ -38,6 +39,7 @@ Route::prefix('admin')->group(function () {
         Route::get('', [BukuController::class, 'buku'])->name('buku');
         Route::get('tambah_buku', [BukuController::class, 'tambah_buku'])->name('tambah_buku');
         Route::get('edit_buku/{id}', [BukuController::class, 'edit_buku'])->name('edit_buku');
+        Route::get('_export', [BukuController::class, '_export'])->name('_export');
         Route::post('_tambah_buku', [BukuController::class, '_tambah_buku'])->name('_tambah_buku');
         Route::post('_list_buku', [BukuController::class, '_list_buku'])->name('_list_buku');
         Route::post('_edit_buku', [BukuController::class, '_edit_buku'])->name('_edit_buku');
@@ -48,6 +50,7 @@ Route::prefix('admin')->group(function () {
         Route::get('', [TanamanController::class, 'tanaman'])->name('tanaman');
         Route::get('tambah_tanaman', [TanamanController::class, 'tambah_tanaman'])->name('tambah_tanaman');
         Route::get('edit_tanaman/{id}', [TanamanController::class, 'edit_tanaman'])->name('edit_tanaman');
+        Route::get('_export', [TanamanController::class, '_export'])->name('_export');
         Route::post('_tambah_tanaman', [TanamanController::class, '_tambah_tanaman'])->name('_tambah_tanaman');
         Route::post('_list_tanaman', [TanamanController::class, '_list_tanaman'])->name('_list_tanaman');
         Route::post('_edit_tanaman', [TanamanController::class, '_edit_tanaman'])->name('_edit_tanaman');
@@ -58,6 +61,7 @@ Route::prefix('admin')->group(function () {
         Route::get('', [Up2kController::class, 'up2k'])->name('up2k');
         Route::get('tambah_up2k', [Up2kController::class, 'tambah_up2k'])->name('tambah_up2k');
         Route::get('edit_up2k/{id}', [Up2kController::class, 'edit_up2k'])->name('edit_up2k');
+        Route::get('_export', [Up2kController::class, '_export'])->name('_export');
         Route::post('_tambah_up2k', [Up2kController::class, '_tambah_up2k'])->name('_tambah_up2k');
         Route::post('_list_up2k', [Up2kController::class, '_list_up2k'])->name('_list_up2k');
         Route::post('_edit_up2k', [Up2kController::class, '_edit_up2k'])->name('_edit_up2k');

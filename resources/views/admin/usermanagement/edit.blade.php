@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="text-end">
-                                <a href="{{ url('/monitoring') }}"><button class="btn btn-info"
+                                <a href="{{ url('admin/usermanagement') }}"><button class="btn btn-info"
                                         type="button">Kembali</button></a>
                                 <button type="submit" class="btn btn-primary btn-submit"> Kirim</button>
                             </div>
@@ -144,7 +144,7 @@
             formData.append('foto', fotoFile ? fotoFile : '');
 
             $.ajax({
-                url: `{{ url('usermanagement/_edit_user') }}`,
+                url: `{{ url('admin/usermanagement/_edit_user') }}`,
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -174,7 +174,7 @@
                                 confirmButton: 'btn btn-primary',
                             },
                         }).then(() => {
-                            window.location.href = `{{ url('usermanagement') }}`;
+                            window.location.href = `{{ url('admin/usermanagement') }}`;
                         });
                     } else {
                         Swal.fire({
