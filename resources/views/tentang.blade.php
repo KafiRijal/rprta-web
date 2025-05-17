@@ -1,14 +1,7 @@
 @extends('template/main')
 
 @section('content')
-    <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
-        <div class="book1">
-            <img src="assets/img/hero/book1.png" alt="book">
-        </div>
-        <div class="book2">
-            <img src="assets/img/hero/book2.png" alt="book">
-        </div>
         <div class="container">
             <div class="page-heading">
                 <h1>Tentang Kami</h1>
@@ -31,16 +24,16 @@
         </div>
     </div>
 
-    <!-- About Section Start -->
     <section class="about-section fix section-padding">
         <div class="container">
             <div class="about-wrapper">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="about-image">
-                            <img src="assets/img/about.jpg" alt="img">
+                            <img src="{{ asset('assets/img/hero/hero-3.jpg') }}" alt="img">
                             <div class="video-box">
-                                <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn ripple video-popup">
+                                <a href="https://www.youtube-nocookie.com/embed/mL_nHCZjkjY?si=TCqfq2A2hAPKjeWY"
+                                    class="video-btn ripple video-popup">
                                     <i class="fa-solid fa-play"></i>
                                 </a>
                             </div>
@@ -52,17 +45,16 @@
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">RPTRA An Nur</h2>
                             </div>
                             <p class="mt-3 wow fadeInUp" data-wow-delay=".5s">
-                                Nullam convallis ullamcorper nulla. Nam accumsan ac leo quis posuere. Nunc rutrum lorem
-                                justo, at blandit mauris ullamcorper tristique. Suspendisse vel ante venenatis,
-                                porttitor ligula sed, iaculis metus. Nullam non erat gravida, viverra leo ut, maximus
-                                tortor. Pellentesque vitae nunc rhoncus, lacinia nulla sed, commodo lectus. Curabitur at
-                                consectetur velit.
+                                RPTRA An Nur (Ruang Publik Terpadu Ramah Anak) adalah ruang terbuka hijau yang dirancang
+                                untuk mendukung tumbuh kembang anak dan interaksi sosial warga. Terletak di Jl. H. Murtadho
+                                XVI RT 008 RW 06, Kelurahan Paseban, Kecamatan Senen, Jakarta Pusat, RPTRA ini diresmikan
+                                pada 13 November 2019 dan dibangun di atas lahan seluas sekitar 340 meter persegi.
                             </p>
                             <p class="mt-3 wow fadeInUp" data-wow-delay=".7s">
-                                Morbi cursus enim in consequat suscipit. Quisque id dui ante. Praesent auctor sed velit
-                                ac aliquet. Morbi consectetur sem nec ipsum malesuada, ut gravida nisl molestie. Proin
-                                hendrerit ullamcorper dui, quis convallis mauris cursus nec. Interdum et malesuada fames
-                                ac ante ipsum primis in faucibus. Vivamus ac laoreet orci.
+                                RPTRA An Nur dilengkapi dengan berbagai fasilitas, termasuk area bermain anak (seperti
+                                ayunan dan jungkat-jungkit), ruang perpustakaan, aula serbaguna, serta sarana olahraga
+                                seperti tenis meja. Lingkungan ini dirancang agar ramah dan aman bagi anak-anak, sekaligus
+                                menjadi tempat yang nyaman bagi orang tua dan warga sekitar untuk berinteraksi.
                             </p>
                         </div>
                     </div>
@@ -71,7 +63,6 @@
         </div>
     </section>
 
-    <!-- Testimonial Section Start -->
     <section class="testimonial-section fix section-padding pt-0">
         <div class="container">
             <div class="section-title text-center">
@@ -175,7 +166,6 @@
         </div>
     </section>
 
-    <!-- Team Section Start -->
     <section class="team-section fix section-padding pt-0 margin-bottom-30">
         <div class="container">
             <div class="section-title text-center">

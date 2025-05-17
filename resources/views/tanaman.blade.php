@@ -1,14 +1,7 @@
 @extends('template/main')
 
 @section('content')
-    <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
-        <div class="book1">
-            <img src="assets/img/hero/book1.png" alt="book">
-        </div>
-        <div class="book2">
-            <img src="assets/img/hero/book2.png" alt="book">
-        </div>
         <div class="container">
             <div class="page-heading">
                 <h1>Koleksi Tanaman</h1>
@@ -31,7 +24,6 @@
         </div>
     </div>
 
-    <!-- Shop Section Start -->
     <section class="shop-section fix section-padding">
         <div class="container">
             <div class="shop-default-wrapper">

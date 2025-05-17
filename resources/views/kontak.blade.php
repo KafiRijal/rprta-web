@@ -3,12 +3,6 @@
 @section('content')
     <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
-        <div class="book1">
-            <img src="assets/img/hero/book1.png" alt="book">
-        </div>
-        <div class="book2">
-            <img src="assets/img/hero/book2.png" alt="book">
-        </div>
         <div class="container">
             <div class="page-heading">
                 <h1>Kontak Kami</h1>
@@ -74,13 +68,7 @@
                                 </div>
                             </div>
                             <div class="video-image">
-                                <img src="assets/img/contact.jpg" alt="img">
-                                <div class="video-box">
-                                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I"
-                                        class="video-btn ripple video-popup">
-                                        <i class="fa-solid fa-play"></i>
-                                    </a>
-                                </div>
+                                <img src="{{ asset('assets/img/kontak.jpg') }}" alt="img">
                             </div>
                         </div>
                     </div>

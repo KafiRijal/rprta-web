@@ -36,7 +36,7 @@
                     <div class="banner-book-card-items bg-cover"
                         style="background-image: url('assets/img/banner/book-banner-1.jpg');">
                         <div class="book-shape">
-                            <img src="{{ asset('') }}" alt="">
+                            <img src="{{ asset('assets/img/banner/banner-1.jpg') }}" alt="">
                         </div>
                         <div class="banner-book-content">
                             <h2>Koleksi <br> Perpustakaan</h2>
@@ -50,7 +50,7 @@
                     <div class="banner-book-card-items bg-cover"
                         style="background-image: url('assets/img/banner/book-banner-2.jpg');">
                         <div class="book-shape">
-                            <img src="" alt="">
+                            <img src="{{ asset('assets/img/banner/banner-2.jpg') }}" alt="">
                         </div>
                         <div class="banner-book-content">
                             <h2>Koleksi
@@ -67,7 +67,7 @@
                     <div class="banner-book-card-items bg-cover"
                         style="background-image: url('assets/img/banner/book-banner-3.jpg');">
                         <div class="book-shape">
-                            <img src="" alt="">
+                            <img src="{{ asset('assets/img/banner/banner-3.jpg') }}" alt="">
                         </div>
                         <div class="banner-book-content">
                             <h2>
@@ -75,8 +75,8 @@
                                 <br>
                                 Gross Mart
                             </h2>
-                            <h6>Berisi daftar produk dan jasa dari UMKM binaan RPTRA An Nur sebagai bentuk dukungan terhadap
-                                usaha warga sekitar.</h6>
+                            <h6>Berisi daftar produk dan jasa UMKM binaan RPTRA An Nur untuk mendukung usaha warga sekitar.
+                            </h6>
                             <a href="shop.html" class="theme-btn white-bg">Lihat Sekarang <i
                                     class="fa-solid fa-arrow-right-long"></i></a>
                         </div>

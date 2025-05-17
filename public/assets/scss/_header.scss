@@ -76,7 +76,7 @@
     .header-top-right {
         gap: 50px;
 
-        @include breakpoint (max-sm) {
+        @include breakpoint(max-sm) {
             gap: 20px;
         }
 
@@ -84,11 +84,11 @@
             @include flex;
             gap: 30px;
 
-            @include breakpoint (max-sm) {
+            @include breakpoint(max-sm) {
                 gap: 10px;
             }
 
-            @include breakpoint (max-xxs) {
+            @include breakpoint(max-xxs) {
                 display: none;
             }
 
@@ -110,7 +110,6 @@
             }
         }
     }
-
 }
 
 .header-top-1 {
@@ -127,16 +126,14 @@
     @include flex;
     gap: 150px;
 
-    @include breakpoint (max-xxxl) {
+    @include breakpoint(max-xxxl) {
         justify-content: space-between;
         gap: 80px;
     }
 
-    @include breakpoint (max-xxl) {
+    @include breakpoint(max-xxl) {
         gap: 25px;
     }
-
-
 
     .category-oneadjust {
         @include flex;
@@ -152,15 +149,15 @@
             left: 20px;
             color: $theme-color;
 
-            @include breakpoint (max-xxxl) {
+            @include breakpoint(max-xxxl) {
                 display: block;
             }
 
-            @include breakpoint (max-xxl) {
+            @include breakpoint(max-xxl) {
                 display: none !important;
             }
 
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 display: block;
             }
         }
@@ -169,21 +166,21 @@
             width: unset !important;
             gap: 20px;
             font-size: 16px;
-            border: 1px solid #E5E5E5;
+            border: 1px solid #e5e5e5;
             border-radius: 0;
             padding: 16px 30px;
             border-right: none !important;
             padding-left: 50px;
 
-            @include breakpoint (max-xxxl) {
+            @include breakpoint(max-xxxl) {
                 display: flex;
             }
 
-            @include breakpoint (max-xxl) {
+            @include breakpoint(max-xxl) {
                 display: none !important;
             }
 
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 display: block;
             }
 
@@ -215,15 +212,15 @@
         .search-toggle-box {
             width: 400px;
 
-            @include breakpoint (max-xxxl) {
+            @include breakpoint(max-xxxl) {
                 width: 325px;
             }
 
-            @include breakpoint (max-xxl) {
+            @include breakpoint(max-xxl) {
                 display: none !important;
             }
 
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 width: 200px;
             }
 
@@ -232,7 +229,7 @@
 
                 input {
                     outline: none;
-                    border: 1px solid #E5E5E5;
+                    border: 1px solid #e5e5e5;
                     background-color: $white;
                     padding: 14px 20px;
                     width: 100%;
@@ -290,7 +287,7 @@
             @include flex;
             gap: 20px;
 
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 display: none;
             }
 
@@ -318,7 +315,6 @@
                     content: "";
                     transform: translate(-50%, -50%);
                 }
-
             }
 
             .content {
@@ -388,13 +384,11 @@
                     display: inline-block;
                     border-radius: 50%;
                     border: 1px solid rgba(79, 83, 107, 0.3);
-
                 }
             }
 
-
             .theme-btn {
-                @include breakpoint (max-xl) {
+                @include breakpoint(max-xl) {
                     display: none;
                 }
             }
@@ -402,14 +396,13 @@
     }
 }
 
-
 .header-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .main-menu {
-        @include breakpoint (max-xl) {
+        @include breakpoint(max-xl) {
             display: none;
         }
 
@@ -423,11 +416,11 @@
                 margin-inline-end: 40px;
                 padding: 28px 0;
 
-                @include breakpoint (max-xxxl) {
+                @include breakpoint(max-xxxl) {
                     margin-inline-end: 25px;
                 }
 
-                @include breakpoint (max-xxl) {
+                @include breakpoint(max-xxl) {
                     margin-inline-end: 30px;
                 }
 
@@ -453,7 +446,6 @@
                     &:hover {
                         color: $theme-color-2 !important;
                     }
-
                 }
 
                 .submenu {
@@ -510,7 +502,7 @@
                         }
 
                         &:hover {
-                            >a {
+                            > a {
                                 background: $theme-color;
                                 color: $white !important;
 
@@ -519,7 +511,7 @@
                                 }
                             }
 
-                            >.submenu {
+                            > .submenu {
                                 -webkit-transform: translateY(1%);
                                 -moz-transform: translateY(1%);
                                 -ms-transform: translateY(1%);
@@ -532,7 +524,7 @@
                     }
 
                     li.has-dropdown {
-                        >a {
+                        > a {
                             &::after {
                                 position: absolute;
                                 top: 50%;
@@ -604,7 +596,7 @@
                 }
 
                 &:hover {
-                    >a {
+                    > a {
                         color: $theme-color-2;
 
                         &::after {
@@ -612,7 +604,7 @@
                         }
                     }
 
-                    >.submenu {
+                    > .submenu {
                         visibility: visible;
                         opacity: 1;
                         transform: translateY(0px);
@@ -628,7 +620,6 @@
         color: $white;
     }
 }
-
 
 .header-1 {
     background-color: $white;
@@ -653,7 +644,7 @@
         .logo {
             margin-bottom: 50px;
 
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 margin-bottom: 0;
             }
 
@@ -669,7 +660,7 @@
         }
 
         .bd-header__category-nav {
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 display: none !important;
             }
         }
@@ -681,7 +672,7 @@
             z-index: 10;
             max-width: 370px;
             background-color: $white;
-            border: 1px solid #E5E5E5;
+            border: 1px solid #e5e5e5;
             border-radius: 0 0 8px 8px;
         }
 
@@ -692,7 +683,7 @@
             z-index: 10;
             max-width: 370px;
             background-color: $white;
-            border: 1px solid #E5E5E5;
+            border: 1px solid #e5e5e5;
             border-radius: 0 0 8px 8px;
         }
 
@@ -724,7 +715,6 @@
                 i {
                     margin-right: 10px;
                 }
-
             }
 
             &.style-2 {
@@ -743,12 +733,11 @@
             transform: rotate(180deg);
         }
 
-
         .category-item {
             ul {
                 li {
                     &:not(:last-child) {
-                        border-bottom: 1px solid #E5E5E5;
+                        border-bottom: 1px solid #e5e5e5;
                     }
 
                     a {
@@ -783,13 +772,11 @@
                 }
             }
         }
-
     }
 
     .header-main {
-
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             top: -1%;
             left: -3%;
@@ -824,7 +811,7 @@
         }
 
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: -1%;
             left: -3%;
@@ -858,7 +845,7 @@
             }
         }
 
-        @include breakpoint (max-xl) {
+        @include breakpoint(max-xl) {
             padding: 15px 0;
         }
 
@@ -881,7 +868,6 @@
                         &:hover {
                             color: $theme-color-2 !important;
                         }
-
                     }
 
                     .submenu {
@@ -934,7 +920,7 @@
                             }
 
                             &:hover {
-                                >a {
+                                > a {
                                     background: $theme-color-2;
                                     color: $white !important;
 
@@ -943,7 +929,7 @@
                                     }
                                 }
 
-                                >.submenu {
+                                > .submenu {
                                     -webkit-transform: translateY(1%);
                                     -moz-transform: translateY(1%);
                                     -ms-transform: translateY(1%);
@@ -956,7 +942,7 @@
                         }
 
                         li.has-dropdown {
-                            >a {
+                            > a {
                                 &::after {
                                     position: absolute;
                                     top: 50%;
@@ -972,9 +958,8 @@
                         }
                     }
 
-
                     &:hover {
-                        >a {
+                        > a {
                             color: $theme-color-2;
 
                             &::after {
@@ -982,7 +967,7 @@
                             }
                         }
 
-                        >.submenu {
+                        > .submenu {
                             visibility: visible;
                             opacity: 1;
                             transform: translateY(0px);
@@ -1001,7 +986,6 @@
     .header-right {
         @include flex;
         justify-content: end;
-
 
         .category-oneadjust {
             @include flex;
@@ -1023,7 +1007,7 @@
                 width: unset !important;
                 gap: 20px;
                 font-size: 16px;
-                border: 1px solid rgba(92, 112, 126, 0.30);
+                border: 1px solid rgba(92, 112, 126, 0.3);
                 padding: 16px 30px;
                 border-radius: 100px 0px 0px 100px;
                 border-right: none !important;
@@ -1057,15 +1041,15 @@
             .search-toggle-box {
                 width: 319px;
 
-                @include breakpoint (max-xxxl) {
+                @include breakpoint(max-xxxl) {
                     width: 150px;
                 }
 
-                @include breakpoint (max-xxl) {
+                @include breakpoint(max-xxl) {
                     width: 70px;
                 }
 
-                @include breakpoint (max-xl) {
+                @include breakpoint(max-xl) {
                     width: 60px;
                 }
 
@@ -1074,7 +1058,7 @@
 
                     input {
                         outline: none;
-                        border: 1px solid rgba(92, 112, 126, 0.30);
+                        border: 1px solid rgba(92, 112, 126, 0.3);
                         background-color: $white;
                         padding: 14px 20px;
                         width: 100%;
@@ -1171,7 +1155,7 @@
                 border-radius: 50%;
                 border: 1px solid rgba(79, 83, 107, 0.3);
 
-                @include breakpoint (max-xl) {
+                @include breakpoint(max-xl) {
                     display: none;
                 }
 
@@ -1206,13 +1190,11 @@
                     display: inline-block;
                     border-radius: 50%;
                     border: 1px solid rgba(79, 83, 107, 0.3);
-
                 }
             }
         }
     }
 }
-
 
 .header-2 {
     background-color: $white;
@@ -1257,7 +1239,7 @@
         }
 
         .bd-header__category-nav {
-            @include breakpoint (max-xl) {
+            @include breakpoint(max-xl) {
                 display: none !important;
             }
         }
@@ -1269,7 +1251,7 @@
             z-index: 10;
             max-width: 370px;
             background-color: $white;
-            border: 1px solid #E5E5E5;
+            border: 1px solid #e5e5e5;
             border-radius: 0 0 8px 8px;
         }
 
@@ -1280,7 +1262,7 @@
             z-index: 10;
             max-width: 370px;
             background-color: $white;
-            border: 1px solid #E5E5E5;
+            border: 1px solid #e5e5e5;
             border-radius: 0 0 8px 8px;
         }
 
@@ -1312,7 +1294,6 @@
                 i {
                     margin-right: 10px;
                 }
-
             }
 
             &.style-2 {
@@ -1331,12 +1312,11 @@
             transform: rotate(180deg);
         }
 
-
         .category-item {
             ul {
                 li {
                     &:not(:last-child) {
-                        border-bottom: 1px solid #E5E5E5;
+                        border-bottom: 1px solid #e5e5e5;
                     }
 
                     a {
@@ -1371,11 +1351,10 @@
                 }
             }
         }
-
     }
 
     .header-main {
-        @include breakpoint (max-xl) {
+        @include breakpoint(max-xl) {
             padding: 15px 0;
         }
 
@@ -1398,7 +1377,6 @@
                         &:hover {
                             color: $theme-color-2 !important;
                         }
-
                     }
 
                     .submenu {
@@ -1455,7 +1433,7 @@
                             }
 
                             &:hover {
-                                >a {
+                                > a {
                                     background: $theme-color;
                                     color: $white !important;
 
@@ -1464,7 +1442,7 @@
                                     }
                                 }
 
-                                >.submenu {
+                                > .submenu {
                                     -webkit-transform: translateY(1%);
                                     -moz-transform: translateY(1%);
                                     -ms-transform: translateY(1%);
@@ -1477,7 +1455,7 @@
                         }
 
                         li.has-dropdown {
-                            >a {
+                            > a {
                                 &::after {
                                     position: absolute;
                                     top: 50%;
@@ -1493,9 +1471,8 @@
                         }
                     }
 
-
                     &:hover {
-                        >a {
+                        > a {
                             color: $theme-color-2;
 
                             &::after {
@@ -1503,7 +1480,7 @@
                             }
                         }
 
-                        >.submenu {
+                        > .submenu {
                             visibility: visible;
                             opacity: 1;
                             transform: translateY(0px);
@@ -1522,7 +1499,6 @@
     .header-right {
         @include flex;
         justify-content: end;
-
 
         .category-oneadjust {
             @include flex;
@@ -1544,7 +1520,7 @@
                 width: unset !important;
                 gap: 20px;
                 font-size: 16px;
-                border: 1px solid rgba(92, 112, 126, 0.30);
+                border: 1px solid rgba(92, 112, 126, 0.3);
                 padding: 16px 30px;
                 border-radius: 100px 0px 0px 100px;
                 border-right: none !important;
@@ -1578,15 +1554,15 @@
             .search-toggle-box {
                 width: 319px;
 
-                @include breakpoint (max-xxxl) {
+                @include breakpoint(max-xxxl) {
                     width: 150px;
                 }
 
-                @include breakpoint (max-xxl) {
+                @include breakpoint(max-xxl) {
                     width: 70px;
                 }
 
-                @include breakpoint (max-xl) {
+                @include breakpoint(max-xl) {
                     width: 60px;
                 }
 
@@ -1595,7 +1571,7 @@
 
                     input {
                         outline: none;
-                        border: 1px solid rgba(92, 112, 126, 0.30);
+                        border: 1px solid rgba(92, 112, 126, 0.3);
                         background-color: $white;
                         padding: 14px 20px;
                         width: 100%;
@@ -1692,7 +1668,7 @@
                 border-radius: 50%;
                 border: 1px solid rgba(79, 83, 107, 0.3);
 
-                @include breakpoint (max-xl) {
+                @include breakpoint(max-xl) {
                     display: none;
                 }
 
@@ -1727,15 +1703,13 @@
                     display: inline-block;
                     border-radius: 50%;
                     border: 1px solid rgba(79, 83, 107, 0.3);
-
                 }
             }
         }
     }
 }
 
-
-//>>>>> Sticky Start <<<<</   
+//>>>>> Sticky Start <<<<</
 .sticky-header {
     background-color: $white;
     padding: 3px;
@@ -1761,7 +1735,7 @@
         justify-content: space-between;
 
         &:before {
-            content: '';
+            content: "";
             position: absolute;
             top: -1%;
             left: -3%;
@@ -1796,7 +1770,7 @@
         }
 
         &:after {
-            content: '';
+            content: "";
             position: absolute;
             top: -1%;
             left: -3%;
@@ -1841,11 +1815,11 @@
                     margin-inline-end: 40px;
                     padding: 28px 0;
 
-                    @include breakpoint (max-xxxl) {
+                    @include breakpoint(max-xxxl) {
                         margin-inline-end: 25px;
                     }
 
-                    @include breakpoint (max-xxl) {
+                    @include breakpoint(max-xxl) {
                         margin-inline-end: 30px;
                     }
 
@@ -1871,7 +1845,6 @@
                         &:hover {
                             color: $theme-color-2 !important;
                         }
-
                     }
 
                     .submenu {
@@ -1924,7 +1897,7 @@
                             }
 
                             &:hover {
-                                >a {
+                                > a {
                                     background: $theme-color-2;
                                     color: $white !important;
 
@@ -1933,7 +1906,7 @@
                                     }
                                 }
 
-                                >.submenu {
+                                > .submenu {
                                     -webkit-transform: translateY(1%);
                                     -moz-transform: translateY(1%);
                                     -ms-transform: translateY(1%);
@@ -1946,7 +1919,7 @@
                         }
 
                         li.has-dropdown {
-                            >a {
+                            > a {
                                 &::after {
                                     position: absolute;
                                     top: 50%;
@@ -2018,7 +1991,7 @@
                     }
 
                     &:hover {
-                        >a {
+                        > a {
                             color: $theme-color-2;
 
                             &::after {
@@ -2026,7 +1999,7 @@
                             }
                         }
 
-                        >.submenu {
+                        > .submenu {
                             visibility: visible;
                             opacity: 1;
                             transform: translateY(0px);
@@ -2148,7 +2121,6 @@
             }
 
             .header-button {
-
                 .theme-btn {
                     width: 100%;
                     padding: 16px 40px;
@@ -2170,8 +2142,8 @@
                     background: transparent;
                     color: $text-color;
                     border-radius: 50%;
-                    -webkit-transition: all .4s ease-in-out;
-                    transition: all .4s ease-in-out;
+                    -webkit-transition: all 0.4s ease-in-out;
+                    transition: all 0.4s ease-in-out;
                     text-align: center;
                     border: 1px solid $border-color;
 
@@ -2202,7 +2174,7 @@
     visibility: visible;
 }
 
-@media (max-width:450px) {
+@media (max-width: 450px) {
     .offcanvas__info {
         width: 300px;
     }
@@ -2214,12 +2186,11 @@
     }
 }
 
-
 //>>>>> Breadcrumb Start <<<<<//
 .breadcrumb-wrapper {
     position: relative;
     overflow: hidden;
-    background: #E6EFF2;
+    background: #e6eff2;
     padding: 173px 0;
 
     .book1 {
@@ -2243,7 +2214,6 @@
     }
 
     .page-heading {
-
         h1 {
             color: $header-color;
             text-align: center;
@@ -2268,7 +2238,7 @@
             justify-content: center;
             gap: 10px;
 
-            @include breakpoint (max-sm) {
+            @include breakpoint(max-sm) {
                 margin-top: 15px;
             }
 
@@ -2283,7 +2253,6 @@
 
                 a {
                     color: $header-color;
-                    ;
                     @include transition;
 
                     &:hover {
@@ -2299,7 +2268,6 @@
         }
     }
 }
-
 
 .error-items {
     text-align: center;
@@ -2318,12 +2286,12 @@
         font-size: 60px;
         margin-bottom: 10px;
 
-        @include breakpoint (max-md) {
+        @include breakpoint(max-md) {
             font-size: 44px;
             line-height: 125%;
         }
 
-        @include breakpoint (max-sm) {
+        @include breakpoint(max-sm) {
             font-size: 34px;
             line-height: 120%;
         }
@@ -2342,8 +2310,6 @@
     }
 }
 
-
-
 .bd-header__category-nav {
     .category__items-2 {
         position: absolute;
@@ -2352,12 +2318,10 @@
         z-index: 10;
         max-width: 350px;
         background-color: $white;
-        border: 1px solid #E5E5E5;
+        border: 1px solid #e5e5e5;
         border-radius: 0 0 8px 8px;
     }
 }
-
-
 
 .bd-category__click {
     height: 60px;
@@ -2366,7 +2330,7 @@
     padding: 0 20px;
     color: $theme-color;
     width: 200px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #e5e5e5;
     text-transform: capitalize;
     font-size: 18px;
     position: relative;
@@ -2405,7 +2369,7 @@
     ul {
         li {
             &:not(:last-child) {
-                border-bottom: 1px solid #E5E5E5;
+                border-bottom: 1px solid #e5e5e5;
             }
 
             a {
