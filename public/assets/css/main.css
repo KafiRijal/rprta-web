@@ -15,6 +15,25 @@
     --box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
 }
 
+.bold-header2{
+     font-weight: 600 !important;
+}
+.bold-header1{
+     font-weight: 800 !important;
+     font-size: 24px;
+}
+.bold-header3{
+     font-weight: 800 !important;
+     font-size: 18px;
+}
+
+.main-menu nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .theme-btn {
     position: relative;
     z-index: 2;
@@ -111,6 +130,7 @@
 /* --------------------------------------------
     Template Default Fonts & Fonts Styles
  ---------------------------------------------- */
+ 
 body {
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -1751,6 +1771,7 @@ span {
 .header-top-logo img {
     height: 50px;
     width: auto;
+    margin-bottom: 12px;
 }
 
 .header-top-logo .logo-text {
@@ -3718,8 +3739,9 @@ span {
 .breadcrumb-wrapper {
     position: relative;
     overflow: hidden;
-    background: #e6eff2;
-    padding: 173px 0;
+    /* background: #e6eff2; */
+    background-image: url(../img/hero/hero2-bg.png);
+    padding: 120px 0;
 }
 .breadcrumb-wrapper .book1 {
     position: absolute;
@@ -4365,10 +4387,79 @@ span {
     z-index: 2;
 }
 
+
+
+
 .hero-2 {
-    position: relative;
+    min-height: auto !important;
+    padding: 40px 0 !important;
     background-image: url(../img/hero/hero2-bg.png);
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important;
+    align-items: center !important;
 }
+
+.hero-items,
+.hero-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.hero-content h1 {
+    font-size: 45px !important;
+    margin-bottom: 15px !important;
+}
+
+.hero-content p {
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+    line-height: 1.5 !important;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 992px) {
+    .hero-2 {
+        padding: 30px 15px !important;
+        text-align: center !important;
+    }
+
+    .hero-content h1 {
+        font-size: 26px !important;
+    }
+
+    .hero-content p {
+        font-size: 15px !important;
+    }
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* .hero-content p {
+    font-size: 16px !important;
+    margin-bottom: 25px !important;
+    line-height: 1.5 !important;
+} */
+
+
+}
+
+
+
+
+
+
+
+
 .hero-2 .frame-shape1,
 .hero-2 .frame-shape2 {
     position: absolute;
@@ -4406,17 +4497,7 @@ span {
     font-weight: 400;
     line-height: 26px;
 }
-.hero-2 .hero-content h1 {
-    position: relative;
-    color: var(--header);
-    font-family: "Inter", sans-serif;
-    font-size: 74px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 90px;
-    margin-bottom: 30px;
-    z-index: 2;
-}
+
 
 .mean-container a.meanmenu-reveal {
     display: none;

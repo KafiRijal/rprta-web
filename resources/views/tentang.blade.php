@@ -4,7 +4,7 @@
     <div class="breadcrumb-wrapper">
         <div class="container">
             <div class="page-heading">
-                <h1>Tentang Kami</h1>
+                <h1 class="wow fadeInUp">Tentang Kami</h1>
                 <div class="page-header">
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                         <li>

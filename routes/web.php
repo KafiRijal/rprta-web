@@ -23,6 +23,7 @@ Route::prefix('auth')->middleware([RedirectIfAuthenticated::class . ':guest'])->
     Route::post('_login', [AuthController::class, '_login'])->name('_login');
 });
 
+Route::prefix('admin')->group(function () {
 Route::prefix('usermanagement')->middleware(['auth', RoleMiddleware::class . ':1'])->group(function () {
     Route::get('', [UsermanagementController::class, 'usermanagement'])->name('usermanagement');
     Route::get('tambah_user', [UsermanagementController::class, 'tambah_user'])->name('tambah_user');
@@ -48,7 +49,7 @@ Route::prefix('profile')->middleware('auth')->group(function () {
     Route::post('_edit_user', [ProfileController::class, '_edit_user'])->name('_edit_user');
     Route::post('_edit_password', [ProfileController::class, '_edit_password'])->name('_edit_password');
 });
-
+});
 Route::get('/404', function () {
     return view('404');
 })->name('notFound');

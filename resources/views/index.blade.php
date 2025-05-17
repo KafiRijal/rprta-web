@@ -1,32 +1,34 @@
 @extends('template/main')
 
 @section('content')
-    <!-- Hero Section start  -->
-    <div class="hero-section hero-2 fix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-xl-6 col-lg-6">
-                    <div class="hero-items">
-                        <div class="hero-content">
-                            <h6 class="wow fadeInUp" data-wow-delay=".3s">Tentang Kami</h6>
-                            <h1 class="wow fadeInUp" data-wow-delay=".5s">Sistem Informasi <br> RPTRA An Nur </h1>
-                            <p class="text-capitalize">hadir sebagai wadah digital terpadu untuk mendukung penyajian
-                                informasi lengkap yang meliputi koleksi perpustakaan, koleksi tanaman, serta usaha mikro,
-                                kecil, dan menengah (UMKM) binaan. <br> Sistem ini hadir sebagai bentuk upaya guna mendukung
-                                kegiatan edukatif, pelestarian lingkungan, serta pemberdayaan ekonomi masyarakat melalui
-                                layanan informasi yang mudah diakses, akurat, dan bermanfaat bagi seluruh pengunjung
-                                dan warga sekitar.</p>
-                            <div class="form-clt wow fadeInUp mt-5" data-wow-delay=".9s">
-                                <button type="submit" class="theme-btn">
-                                    Tentang Kami <i class="fa-solid fa-arrow-right-long"></i>
-                                </button>
-                            </div>
+<div class="hero-section hero-2 fix">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-xl-6 col-lg-6 mb-lg-0">
+                <div class="hero-items">
+                    <div class="hero-content">
+                        <h1 class="wow fadeInUp" data-wow-delay=".5s">
+                            Sistem Informasi <br> RPTRA AN NUR
+                        </h1>
+                        <p class="text-capitalize">
+                            RPTRA An Nur (Ruang Publik Terpadu Ramah Anak) adalah ruang terbuka hijau yang dirancang untuk mendukung tumbuh kembang anak dan interaksi sosial warga. 
+                        </p>
+                        <div class="form-clt wow fadeInUp my-2" data-wow-delay=".9s">
+                            <button type="submit" class="theme-btn mb-3">
+                                Tentang Kami <i class="fa-solid fa-arrow-right-long"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="col-12 col-xl-6 col-lg-6 text-center hero-image">
+                <img src="{{asset('assets/img/hero/hero-head.png')}}" alt="Gambar RPTRA" class="img-fluid" />
+            </div>
         </div>
     </div>
+</div>
+
 
     <!-- Book Banner Section start  -->
     <section class="book-banner-section fix section-padding">
