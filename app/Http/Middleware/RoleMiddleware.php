@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -10,13 +9,11 @@ class RoleMiddleware
     /**
      * Handle an incoming request.
      */
-    public function handle($request, Closure $next, $roles)
+    public function handle($request, Closure $next, ...$roles)
     {
         $user = Auth::user();
 
-        $rolesArray = explode(',', $roles);
-
-        if (!$user || !in_array($user->role_id, $rolesArray)) {
+        if (!$user || !in_array($user->role_id, $roles)) {
             return redirect()->route('notFound')->with('error', 'Anda tidak memiliki akses ke halaman ini.');
         }
 

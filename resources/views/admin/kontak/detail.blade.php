@@ -36,9 +36,6 @@
                                 <strong>Email:</strong> {{ $kontak->email }}
                             </div>
                             <div class="mb-3 col-md-6">
-                                <strong>Nomor WhatsApp:</strong> {{ $kontak->number }}
-                            </div>
-                            <div class="mb-3 col-md-6">
                                 <strong>Dikirim Pada:</strong> {{ $kontak->created_at->format('d M Y, H:i') }}
                             </div>
                             <div class="mb-3 col-md-12">
@@ -46,7 +43,7 @@
                             </div>
                         </div>    
                         <div class="text-end">
-                            <a href="{{ url('kontak') }}" class="btn btn-info">Kembali</a>
+                            <a href="{{ url('admin/kontak') }}" class="btn btn-info">Kembali</a>
                         </div>                    
                     </div>
                 </div>

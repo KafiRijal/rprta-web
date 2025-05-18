@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{LandingPageController, AuthController, DashboardController, UsermanagementController, ProfileController, BukuController, TanamanController, Up2kController};
+use App\Http\Controllers\{LandingPageController, AuthController, DashboardController, UsermanagementController, ProfileController, BukuController, TanamanController, Up2kController, KontakController};
 use App\Http\Middleware\{RoleMiddleware, RedirectIfAuthenticated};
-use App\Models\Up2k;
 
 Route::get('/', [LandingPageController::class, 'index'])->name('index');
 Route::get('tentang', [LandingPageController::class, 'tentang'])->name('tentang');
@@ -14,6 +13,8 @@ Route::get('detailTanaman/{slug}', [LandingPageController::class, 'detailTanaman
 Route::get('up2k', [LandingPageController::class, 'up2k'])->name('up2k');
 Route::get('detailUp2k/{skug}', [LandingPageController::class, 'detailUp2k'])->name('detailUp2k');
 Route::get('kontak', [LandingPageController::class, 'kontak'])->name('kontak');
+Route::post('_kontak', [LandingPageController::class, '_kontak'])->name('_kontak');
+
 
 // Administrator
 Route::post('auth/_logout', [AuthController::class, '_logout']);
@@ -72,6 +73,13 @@ Route::prefix('admin')->group(function () {
         Route::get('', [ProfileController::class, 'profile'])->name('profile');
         Route::post('_edit_user', [ProfileController::class, '_edit_user'])->name('_edit_user');
         Route::post('_edit_password', [ProfileController::class, '_edit_password'])->name('_edit_password');
+    });
+
+    Route::prefix('kontak')->middleware(['auth', RoleMiddleware::class . ':1,2'])->group(function () {
+        Route::get('', [KontakController::class, 'kontak'])->name('kontak');
+        Route::get('detail_kontak/{id}', [KontakController::class, 'detail_kontak'])->name('detail_kontak');
+        Route::post('_list_kontak', [KontakController::class, '_list_kontak'])->name('_list_kontak');
+        Route::delete('_delete_kontak/{id}', [KontakController::class, '_delete_kontak'])->name('_delete_kontak');
     });
 });
 

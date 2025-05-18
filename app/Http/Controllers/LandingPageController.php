@@ -6,6 +6,7 @@ use App\Models\Buku;
 use App\Models\Tanaman;
 use App\Models\Up2k;
 use App\Models\User;
+use App\Models\Kontak;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -105,18 +106,12 @@ class LandingPageController extends Controller
 
         return view('up2k', $data);
     }
+
     public function kontak()
     {
         return view('kontak');
     }
-    public function login()
-    {
-        return view('login');
-    }
-    public function daftar()
-    {
-        return view('daftar');
-    }
+
     public function detailBuku($slug)
     {
         $buku = Buku::where('slug', $slug)->with('kategori:id,nama')->get();
@@ -146,5 +141,21 @@ class LandingPageController extends Controller
         ];
 
         return view('tanaman-detail', $data);
+    }
+    public function _kontak(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required|string',
+        ]);
+
+        Kontak::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ]);
+
+        return back()->with('success', 'Pesan Anda berhasil dikirim!, Kami akan Membalasnya Via Email');
     }
 }

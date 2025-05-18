@@ -28,41 +28,65 @@
     <!-- Contact Section Start -->
     <section class="contact-section fix section-padding">
         <div class="container">
-            <div class="contact-wrapper justify-content-center">
-                <div class="row g-3 align-items-center p-4 rounded-4 shadow-sm bg-white justify-content-center text-center">
-                    <h2 class="fw-bold">Berikan Saran & Masukan</h2>
-                    <p>Kami menghargai setiap saran dan masukan Anda untuk meningkatkan pelayanan dan fasilitas di RPTRA.
-                    </p>
+            <div class="contact-wrapper d-flex flex-column align-items-center justify-content-center">
+                <div class="row g-3 align-items-center p-4 rounded-4 shadow-sm bg-white text-center justify-content-center">
+                    <div class="col-12">
+                        <h2 class="fw-bold">Berikan Saran & Masukan</h2>
+                        <p>Kami menghargai setiap saran dan masukan Anda untuk meningkatkan pelayanan dan fasilitas di
+                            RPTRA.</p>
+                    </div>
                     <div class="col-12 d-flex justify-content-center">
                         <img src="{{ asset('assets/img/kontak.jpg') }}" alt="img" class="img-fluid rounded-4"
                             style="max-width: 70%;">
                     </div>
                 </div>
-                <div class="row g-3 align-items-center p-4 rounded-4 shadow-sm bg-white justify-content-center">
+
+                <div
+                    class="row g-3 align-items-center p-4 rounded-4 shadow-sm bg-white justify-content-center text-center mt-4 w-100">
                     <div class="col-lg-8">
                         <div class="contact-content">
-                            <form action="contact.php" id="contact-form" method="POST" class="contact-form-items">
-                                <div class="row g-4">
+                            <form action="{{ url('_kontak') }}" method="POST" class="contact-form-items">
+                                @csrf
+                                @if (session('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('success') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                <div class="row g-4 justify-content-center">
                                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="form-clt">
+                                        <div class="form-clt text-start">
                                             <span>Nama</span>
                                             <input type="text" name="name" id="name" placeholder="Nama Kamu">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="form-clt">
+                                        <div class="form-clt text-start">
                                             <span>Email</span>
                                             <input type="text" name="email" id="email123" placeholder="Email Kamu">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
-                                        <div class="form-clt">
+                                        <div class="form-clt text-start">
                                             <span>Saran & Masukan</span>
                                             <textarea name="message" id="message" placeholder="Saran & Masukan Kamu"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
-                                        <button type="submit" class="theme-btn">
+                                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".9s">
+                                        <button type="submit" class="theme-btn w-100">
                                             Kirim <i class="fa-solid fa-arrow-right-long"></i>
                                         </button>
                                     </div>
@@ -74,6 +98,7 @@
             </div>
         </div>
     </section>
+
 
     <!--<< Map Section Start >>-->
     <div class="map-section p-4 rounded-4 shadow-sm bg-white">

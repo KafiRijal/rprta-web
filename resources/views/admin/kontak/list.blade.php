@@ -52,7 +52,7 @@
                 processing: true,
                 serverSide: false,
                 ajax: {
-                    url: "{{ url('kontak/_list_kontak') }}",
+                    url: "{{ url('admin/kontak/_list_kontak') }}",
                     type: 'POST',
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
@@ -95,7 +95,7 @@
                             var deleteLink =
                                 `<a href="#" class="ms-2 btn btn-danger btn-sm delete-btn" data-id="${data}"><i class="fas fa-trash"></i></a>`;
                             var detailLink =
-                                `<a href="{{ url('kontak/detail_kontak') }}/${data}" class="ms-2 btn btn-primary btn-sm detail-btn"><i class="fas fa-envelope-open-text"></i></a>`;
+                                `<a href="{{ url('admin/kontak/detail_kontak') }}/${data}" class="ms-2 btn btn-primary btn-sm detail-btn"><i class="fas fa-envelope-open-text"></i></a>`;
                             return detailLink + ' ' + deleteLink;
                         }
                     }
@@ -119,7 +119,7 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: `{{ url('kontak/_delete_kontak/') }}/${Id}`,
+                        url: `{{ url('admin/kontak/_delete_kontak/') }}/${Id}`,
                         type: 'DELETE',
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

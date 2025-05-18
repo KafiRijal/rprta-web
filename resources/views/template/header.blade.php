@@ -71,8 +71,7 @@
 
                     <!-- Hamburger -->
                     <div class="col-auto d-none d-xl-block">
-                        <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1" data-bs-toggle="modal"
-                            data-bs-target="#registrationModal">
+                        <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1">
                             Masuk <i class="fa-solid fa-arrow-right-long"></i>
                         </a>
                     </div>
@@ -130,8 +129,7 @@
 
                 <!-- Hamburger -->
                 <div class="col-auto d-none d-xl-block">
-                    <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1" data-bs-toggle="modal"
-                        data-bs-target="#registrationModal">
+                    <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1">
                         Masuk <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                 </div>
