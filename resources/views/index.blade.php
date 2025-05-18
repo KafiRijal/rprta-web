@@ -16,7 +16,7 @@
                             </p>
                             <div class="form-clt wow fadeInUp my-2" data-wow-delay=".9s">
                                 <a href="{{ url('/tentang') }}" class="theme-btn mb-3">
-                                    Masuk <i class="fa-solid fa-arrow-right-long"></i>
+                                    Tentang Kami <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                             </div>
                         </div>
@@ -37,9 +37,9 @@
             <div class="row g-4">
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="banner-book-card-items bg-cover"
-                        style="background-image: url('assets/img/banner/book-banner-1.jpg');">
+                       style="background-image: url('{{ asset('assets/img/banner/banner-1.jpg') }}');"
+>
                         <div class="book-shape">
-                            <img src="{{ asset('assets/img/banner/banner-1.jpg') }}" alt="">
                         </div>
                         <div class="banner-book-content">
                             <h2>Koleksi <br> Perpustakaan</h2>
@@ -50,10 +50,8 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="banner-book-card-items bg-cover"
-                        style="background-image: url('assets/img/banner/book-banner-2.jpg');">
+                    <div class="banner-book-card-items bg-cover" style="background-image: url('{{ asset('assets/img/banner/banner-2.jpg') }}');">
                         <div class="book-shape">
-                            <img src="{{ asset('assets/img/banner/banner-2.jpg') }}" alt="">
                         </div>
                         <div class="banner-book-content">
                             <h2>Koleksi
@@ -67,10 +65,9 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="banner-book-card-items bg-cover"
-                        style="background-image: url('assets/img/banner/book-banner-3.jpg');">
+                    <div class="banner-book-card-items bg-cover" style="background-image: url('{{ asset('assets/img/banner/banner-3.jpg') }}');">
                         <div class="book-shape">
-                            <img src="{{ asset('assets/img/banner/banner-3.jpg') }}" alt="">
+                            {{-- <img src="{{ asset('assets/img/banner/banner-3.jpg') }}" alt=""> --}}
                         </div>
                         <div class="banner-book-content">
                             <h2>
@@ -231,18 +228,26 @@
                     @if (!empty($petugas))
                         @foreach ($petugas as $pt)
                             <div class="swiper-slide">
-                                <div class="team-box-items">
+                                <div class="team-box-items"
+                                    style="min-height: 320px; display: flex; flex-direction: column; justify-content: space-between;">
                                     <div class="team-image">
                                         <div class="thumb">
-                                            <img style="width: 100%; height:100%;"
-                                                src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
-                                                alt="img">
+<img style="width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: top; border-radius: 5px;"
+    src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
+    alt="img">
+
                                         </div>
                                     </div>
-                                    <div class="team-content text-center">
-                                        <h6><a href="#">{{ $pt->nama }}</a></h6>
-                                        <span style="font-size: 10px">{{ $pt->jabatan->jabatan }}</span>
+
+                                    <div class="team-content text-center" style="margin-top: 10px;">
+                                        <h6 style="margin: 5px 0 2px 0; font-size: 16px; font-weight: 600;">
+                                            <a href="#"
+                                                style="text-decoration: none; color: inherit;">{{ $pt->nama }}</a>
+                                        </h6>
+                                        <span
+                                            style="font-size: 11px; white-space: nowrap;">{{ $pt->jabatan->jabatan }}</span>
                                     </div>
+
                                 </div>
                             </div>
                         @endforeach

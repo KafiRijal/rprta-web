@@ -21,3 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/public/image_buku/*
+/public/image_buku/*
+/public/image_buku/*
+/public/foto_user/*
