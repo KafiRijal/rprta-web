@@ -148,7 +148,13 @@ class LandingPageController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
+        ], [
+            'name.required' => 'Nama harus diisi.',
+            'email.required' => 'Email harus diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'message.required' => 'Pesan harus diisi.',
         ]);
+
 
         Kontak::create([
             'name' => $request->input('name'),

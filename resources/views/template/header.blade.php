@@ -83,7 +83,7 @@
                                 <div class="header-humbager ml-30">
                                     <a class="sidebar__toggle" href="javascript:void(0)">
                                         <div class="bar-icon-2">
-                                            <img src="assets/img/icon/icon-13.svg" alt="img" />
+                                            <img src="{{ asset('assets/img/icon/icon-13.svg')}}" alt="img" />
                                         </div>
                                     </a>
                                 </div>
@@ -141,7 +141,7 @@
                             <div class="header-humbager ml-30">
                                 <a class="sidebar__toggle" href="javascript:void(0)">
                                     <div class="bar-icon-2">
-                                        <img src="assets/img/icon/icon-13.svg" alt="img" />
+                                        <img src="{{ asset('assets/img/icon/icon-13.svg')}}" alt="img" />
                                     </div>
                                 </a>
                             </div>
