@@ -25,7 +25,7 @@
                 <div class="offcanvas__contact">
 
                     <div class="header-button mt-4">
-                        <a href="contact.html" class="theme-btn text-center">
+                        <a href="{{ url('/auth/login') }}" class="theme-btn text-center">
                             Masuk <i class="fa-solid fa-arrow-right-long"></i>
                         </a>
                     </div>
@@ -60,9 +60,9 @@
                                 <ul class="d-xl-flex mb-0 list-unstyled">
                                     <li><a class="bold-header2" href="{{ url('buku') }}">Buku</a></li>
                                     <li class="has-dropdown"><a class="bold-header2"
-                                        href="{{ url('tanaman') }}">Tanaman</a></li>
-                                        <li><a class="bold-header2" href="{{ url('up2k') }}">UP2K</a></li>
-                                        <li><a class="bold-header2" href="{{ url('tentang') }}">Tentang Kami</a></li>
+                                            href="{{ url('tanaman') }}">Tanaman</a></li>
+                                    <li><a class="bold-header2" href="{{ url('up2k') }}">UP2K</a></li>
+                                    <li><a class="bold-header2" href="{{ url('tentang') }}">Tentang Kami</a></li>
                                     <li><a class="bold-header2" href="{{ url('kontak') }}">Kontak</a></li>
                                 </ul>
                             </nav>
@@ -71,10 +71,10 @@
 
                     <!-- Hamburger -->
                     <div class="col-auto d-none d-xl-block">
-                        <button type="button" class="theme-btn rounded-1" data-bs-toggle="modal"
+                        <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1" data-bs-toggle="modal"
                             data-bs-target="#registrationModal">
                             Masuk <i class="fa-solid fa-arrow-right-long"></i>
-                        </button>
+                        </a>
                     </div>
 
                     <!-- Mobile: Tombol Hamburger -->
@@ -119,9 +119,9 @@
                             <ul class="d-xl-flex mb-0 list-unstyled">
                                 <li><a class="bold-header2" href="{{ url('buku') }}">Buku</a></li>
                                 <li class="has-dropdown"><a class="bold-header2"
-                                    href="{{ url('tanaman') }}">Tanaman</a></li>
-                                    <li><a class="bold-header2" href="{{ url('up2k') }}">UP2K</a></li>
-                                    <li><a class="bold-header2" href="{{ url('tentang') }}">Tentang Kami</a></li>
+                                        href="{{ url('tanaman') }}">Tanaman</a></li>
+                                <li><a class="bold-header2" href="{{ url('up2k') }}">UP2K</a></li>
+                                <li><a class="bold-header2" href="{{ url('tentang') }}">Tentang Kami</a></li>
                                 <li><a class="bold-header2" href="{{ url('kontak') }}">Kontak</a></li>
                             </ul>
                         </nav>
@@ -130,10 +130,10 @@
 
                 <!-- Hamburger -->
                 <div class="col-auto d-none d-xl-block">
-                    <button type="button" class="theme-btn rounded-1" data-bs-toggle="modal"
+                    <a href="{{ url('/auth/login') }}" class="theme-btn rounded-1" data-bs-toggle="modal"
                         data-bs-target="#registrationModal">
                         Masuk <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Mobile: Tombol Hamburger -->

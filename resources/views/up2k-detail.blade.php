@@ -27,100 +27,82 @@
     <section class="shop-details-section fix section-padding">
         <div class="container">
             <div class="shop-details-wrapper">
-                <div class="row g-4">
-                    <div class="col-lg-12">
-                        <div class="shop-details-image">
-                            <div class="tab-content">
-                                <div id="thumb1" class="tab-pane fade show active">
-                                    <div class="shop-details-thumb">
-                                        <img src="assets/img/shop-details/01.png" alt="img">
+                @if (!empty($up2k))
+                    @foreach ($up2k as $up)
+                        <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="shop-details-image">
+                                    <div class="tab-content">
+                                        <div id="thumb1" class="tab-pane fade show active">
+                                            <div class="shop-details-thumb">
+                                                {{-- <img src="assets/img/shop-details/01.png" alt="img"> --}}
+                                                <img style="width: 100%; height:100%;" 
+                                                                src="{{ asset($up->image ? 'image_up2k/' . $up->image : 'image_up2k/up2k.png') }}"
+                                                                alt="img">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="single-tab section-padding pb-0">
-                    <ul class="nav mb-5" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <a href="#description" data-bs-toggle="tab" class="nav-link ps-0 active" aria-selected="true"
-                                role="tab">
-                                <h6>Deskripsi UP2K</h6>
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <a href="#additional" data-bs-toggle="tab" class="nav-link" aria-selected="false" tabindex="-1"
-                                role="tab">
-                                <h6>Informasi UP2K</h6>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="description" class="tab-pane fade show active" role="tabpanel">
-                            <div class="description-items">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis erat
-                                    interdum, tempor turpis in, sodales ex. In hac habitasse platea dictumst. Etiam
-                                    accumsan scelerisque urna, a lobortis velit vehicula ut. Maecenas porttitor dolor a
-                                    velit aliquet, et euismod nibh vulputate. Duis nunc velit, lacinia vel risus in,
-                                    finibus sodales augue. Aliquam lacinia imperdiet dictum. Etiam tempus finibus
-                                    tortor, quis placerat arcu tristique in. Sed vitae dui a diam luctus maximus.
-                                    Quisque nec felis dapibus, dapibus enim vitae, vestibulum libero. Aliquam erat
-                                    volutpat. Phasellus luctus rhoncus justo. Duis a nulla sit amet justo aliquam
-                                    ullamcorper. Phasellus nulla lorem, pretium et libero in, porta auctor dui. In a
-                                    ornare purus, et efficitur elit. Etiam consectetur sit amet quam ut tincidunt. Donec
-                                    gravida ultricies tellus ac pharetra.
-                                    Praesent a pulvinar purus. Proin sollicitudin leo eget mi sagittis aliquam. Donec
-                                    sollicitudin ex ac lobortis mollis. Sed eget libero nec mi
-                                </p>
+                        <div class="single-tab section-padding pb-0">
+                            <ul class="nav mb-5" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a href="#additional" data-bs-toggle="tab" class="nav-link active" aria-selected="false"
+                                        tabindex="-1" role="tab">
+                                        <h6>Informasi UP2K</h6>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="additional" class="tab-pane fade show active" role="tabpanel">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-1">Kecamatan</td>
+                                                    <td class="text-2">{{ $up->kecamatan }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Kelurahan</td>
+                                                    <td class="text-2">{{ $up->kelurahan }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Jenis Produk</td>
+                                                    <td class="text-2">{{ $up->kategori->nama }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Nama Produk</td>
+                                                    <td class="text-2">{{ $up->nama_produk }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Nomor Telepon</td>
+                                                    <td class="text-2">{{ $up->telepon }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Perizinan</td>
+                                                    <td class="text-2">{{ $up->perizinan }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Pemasaran</td>
+                                                    <td class="text-2">{{ $up->pemasaran }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Nama UP2K</td>
+                                                    <td class="text-2">{{ $up->nama }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-1">Keterangan</td>
+                                                    <td class="text-2">{{ $up->keterangan }}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div id="additional" class="tab-pane fade" role="tabpanel">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-1">Kecamatan</td>
-                                            <td class="text-2">Senen</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Kelurahan</td>
-                                            <td class="text-2">Jl. Kramat Lontar IX No. J26 RT 001 RW 001</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Jenis Produk</td>
-                                            <td class="text-2">Makanan</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Nama Produk</td>
-                                            <td class="text-2">Chatering Fera</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Nomor Telepon</td>
-                                            <td class="text-2">085780067855</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Perizinan</td>
-                                            <td class="text-2">Halal</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Pemasaran</td>
-                                            <td class="text-2">Offline</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Nama UP2K</td>
-                                            <td class="text-2">Fera</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-1">Keterangan</td>
-                                            <td class="text-2">RW 01</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>

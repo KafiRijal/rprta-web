@@ -7,10 +7,10 @@
                 </div>
                 <div class="content">
                     <p>Hubungi Kami</p>
-                    <h3>
-                        <a href="tel:085782754934">085782754934
+                     <p style="font-weight: 800; font-size:15px">
+                        <a style="color: white;" href="tel:085782754934">085782754934
                         </a>
-                    </h3>
+                    </p>
                 </div>
             </div>
             <div class="contact-info-items wow fadeInUp" data-wow-delay=".4s">
@@ -19,9 +19,9 @@
                 </div>
                 <div class="content">
                     <p>Email</p>
-                    <h3>
-                        <a href="mailto:rptraannur530@gmail.com">rptraannur530@gmail.com</a>
-                    </h3>
+                    <p style="font-weight: 800; font-size:15px">
+                        <a  style="color: white" href="mailto:rptraannur530@gmail.com"> rptraannur530@gmail.com</a>
+                    </p>
                 </div>
             </div>
             <div class="contact-info-items wow fadeInUp" data-wow-delay=".6s">
@@ -30,9 +30,9 @@
                 </div>
                 <div class="content">
                     <p>Jam Operasional</p>
-                    <h3>
+                     <p style="font-weight: 800; font-size:18px">
                         Sen - Min: 07.00 - 17.00
-                    </h3>
+                    </p>
                 </div>
             </div>
         </div>
@@ -58,9 +58,10 @@
                                 Memberikan ruang aman dan nyaman bagi seluruh masyarakat.
                             </p>
                             <div class="social-icon d-flex align-items-center">
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://x.com/"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/share/1ApXq98wN5/"><i class="fab fa-facebook-f"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/rptraannur?igsh=Ymp5eHBhZGh1azFq"><i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="https://youtube.com/@rptraannur2978?si=TJER68frz5HNwE3q"><i class="fab fa-youtube"></i></a>
+                                <a target="_blank" href="https://www.tiktok.com/@rptraannur?_t=ZS-8wRudOuUrOW&_r=1"><i class="fab fa-tiktok"></i></a>
                             </div>
                         </div>
                     </div>

@@ -76,102 +76,26 @@
             </div>
             <div class="swiper team-slider">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/01.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Esther Howard</a></h6>
-                                <p>10 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/02.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
+                    @if (!empty($petugas))
+                        @foreach ($petugas as $pt)
+                            <div class="swiper-slide">
+                                <div class="team-box-items">
+                                    <div class="team-image">
+                                        <div class="thumb">
+                                            <img
+                                                style="width: 100%; height:100%;"
+                                                src="{{ asset($pt->image ? 'foto_user/' . $pt->image : 'foto_user/user.jpg') }}"
+                                                alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="team-content text-center">
+                                        <h6><a href="#">{{ $pt->nama }}</a></h6>
+                                        <span style="font-size: 12px">{{ $pt->jabatan->jabatan }}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Shikhon Islam</a></h6>
-                                <p>07 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/03.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Kawser Ahmed</a></h6>
-                                <p>04 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/04.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Brooklyn Simmons</a></h6>
-                                <p>15 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/05.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Leslie Alexander</a></h6>
-                                <p>05 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team-box-items">
-                            <div class="team-image">
-                                <div class="thumb">
-                                    <img src="assets/img/team/06.jpg" alt="img">
-                                </div>
-                                <div class="shape-img">
-                                    <img src="assets/img/team/shape-img.png" alt="img">
-                                </div>
-                            </div>
-                            <div class="team-content text-center">
-                                <h6><a href="team-details.html">Guy Hawkins</a></h6>
-                                <p>12 Published Books</p>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
