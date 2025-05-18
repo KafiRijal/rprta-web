@@ -30,7 +30,7 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
-                        <a href="{{ url('/profile') }}" class="dropdown-item notify-item">
+                        <a href="{{ url('admin/profile') }}" class="dropdown-item notify-item">
                             <i class="mdi mdi-account-circle-outline fs-16 align-middle"></i>
                             <span>Akun</span>
                         </a>

@@ -8,154 +8,52 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Pantau Tumbuh</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("assets_portal/img/favicons/apple-icon.png") }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ asset("assets_portal/img/favicons/android-chrome-192x192.png") }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets_portal/img/favicons/apple-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{{ asset('assets_portal/img/favicons/android-chrome-192x192.png') }}">
 
     <link href="{{ asset('assets_admin/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
-    <link href="{{ asset('assets_admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />  
+    <link href="{{ asset('assets_admin/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets_admin/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            margin-top: 1.2rem !important;
-        }
-
-        @media (min-width: 992px) {
-            body {
-                margin-top: 0 !important;
-            }
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .loader {
-            width: 50px;
-            aspect-ratio: 1;
-            display: grid;
-        }
-
-        .loader::before,
-        .loader::after {
-            content: "";
-            grid-area: 1/1;
-            --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
-            background:
-                var(--c) 50% 0,
-                var(--c) 50% 100%,
-                var(--c) 100% 50%,
-                var(--c) 0 50%;
-            background-size: 12px 12px;
-            animation: l12 1s infinite;
-        }
-
-        .loader::before {
-            margin: 4px;
-            filter: hue-rotate(45deg);
-            background-size: 8px 8px;
-            animation-timing-function: linear
-        }
-
-        @keyframes l12 {
-            100% {
-                transform: rotate(.5turn)
-            }
-        }
-
-        .cursor-pointer {
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-<body class="bg-primary-subtle">
-    <div class="account-page">
-        <div class="container-fluid p-0">
-            <div class="row align-items-center g-0">
-                <div class="col-xl-5">
-                    <div class="row">
-                        <div class="col-md-8 mx-auto">
-                            <div class="card p-3 mb-0">
-                                <div class="card-body">
+<body class="login-wrapper">
+    <div class="card card-login">
+        <div class="text-center mb-4">
+            <a href="{{ url('/admin/dashboard') }}"
+                class="header-logo d-flex align-items-center justify-content-center">
+                <img src="{{ asset('assets/img/logo/rptra.png') }}" alt="logo-img" style="height: 50px;">
+                <span class="logo-text ms-2 fw-bold" style="color:#000">RPTRA AN NUR</span>
+            </a>
+        </div>
 
-                                    <div class="mb-0 border-0 p-md-5 p-lg-0 p-4">
-                                        <div class="mb-4 p-0 text-center">
-                                            <a href="{{ url('/') }}" class="auth-logo">
-                                                <img src="{{ asset('assets_portal/img/logo-2.png') }}" alt="logo-dark"
-                                                    class="mx-auto" height="70" />
-                                            </a>
-                                        </div>
+        <form id="loginForm">
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input class="form-control" type="email" id="email" required placeholder="Masukan Email">
+            </div>
 
-                                        <div class="auth-title-section mb-3 text-center">
-                                            <h3 class="text-dark fs-20 fw-medium mb-2">Selamat Datang</h3>
-                                        </div>
-
-                                        <div class="pt-0">
-                                            <form id="loginForm" class="my-4">
-                                                <div class="form-group mb-3">
-                                                    <label for="email" class="form-label">Email</label>
-                                                    <input class="form-control" type="email" id="email"
-                                                        required="" placeholder="Masukan Email">
-                                                </div>
-
-                                                <div class="form-group mb-3">
-                                                    <label for="password" class="form-label">Password</label>
-                                                    <div class="input-group">
-                                                        <input class="form-control" type="password" id="password"
-                                                            name="password" placeholder="Masukan Password">
-                                                        <span class="input-group-text cursor-pointer"
-                                                            id="togglePasswordIcon1">
-                                                            <i id="icon-pass1" class="fas fa-eye"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-12 text-center">
-                                                    <div class="form-group mb-0 row">
-                                                        <div class="col-12">
-                                                            <div class="d-grid">
-                                                                <button class="btn btn-primary" id="submit"
-                                                                    type="submit">
-                                                                    <div id="loader" class="loader"
-                                                                        style="display:none;"></div>
-                                                                    <span id="btn-login">Log In</span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                            <div class="text-center text-muted mb-4">
-                                                <p class="mb-0">Belum Punya Akun ?<a
-                                                        class='text-primary ms-2 fw-medium'
-                                                        href='{{ url('/auth/register') }}'>Register</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-7">
-                    <div class="account-page-bg p-md-5 p-4">
-                        <div class="text-center">
-                            <div class="auth-image">
-                                <img src="{{ asset('assets_portal/img/login-3.svg') }}" class="mx-auto img-fluid"
-                                    alt="images">
-                            </div>
-                        </div>
-                    </div>
+            <div class="form-group mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                    <input class="form-control" type="password" id="password" name="password"
+                        placeholder="Masukan Password">
+                    <span class="input-group-text cursor-pointer" id="togglePasswordIcon1">
+                        <i id="icon-pass1" class="fas fa-eye"></i>
+                    </span>
                 </div>
             </div>
-        </div>
+
+            <div class="d-grid">
+                <button class="btn btn-primary" id="submit" type="submit">
+                    <div id="loader" class="loader" style="display:none;"></div>
+                    <span id="btn-login">Log In</span>
+                </button>
+            </div>
+        </form>
     </div>
 
     <script src="{{ asset('assets_admin/libs/jquery/jquery.min.js') }}"></script>
@@ -208,7 +106,7 @@
                                 confirmButton: 'btn btn-primary',
                             },
                         }).then(() => {
-                            window.location.href = `{{ url('dashboard') }}`;
+                            window.location.href = `{{ url('admin/dashboard') }}`;
                         });
                     } else {
                         Swal.fire({

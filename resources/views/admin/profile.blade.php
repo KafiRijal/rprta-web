@@ -59,7 +59,6 @@
                             <li class="nav-item">
                                 <a class="nav-link p-2 active" id="setting_tab" data-bs-toggle="tab" href="#profile_setting"
                                     role="tab">
-                                    {{-- <span class="d-block d-sm-none"><i class="mdi mdi-information"></i></span> --}}
                                     <span class="d-sm-block">Ubah Profile</span>
                                 </a>
 
@@ -67,7 +66,6 @@
                             <li class="nav-item">
                                 <a class="nav-link p-2" id="password_tab" data-bs-toggle="tab" href="#password_setting"
                                     role="tab">
-                                    {{-- <span class="d-block d-sm-none"><i class="mdi mdi-information"></i></span> --}}
                                     <span class="d-sm-block">Ubah Password</span>
                                 </a>
                             </li>
@@ -236,7 +234,7 @@
             formData.append('foto', fotoFile ? fotoFile : '');
 
             $.ajax({
-                url: `{{ url('profile/_edit_user') }}`,
+                url: `{{ url('admin/profile/_edit_user') }}`,
                 type: 'POST',
                 data: formData,
                 contentType: false,
@@ -266,7 +264,7 @@
                                 confirmButton: 'btn btn-primary',
                             },
                         }).then(() => {
-                            window.location.href = `{{ url('profile') }}`;
+                            window.location.href = `{{ url('admin/profile') }}`;
                         });
                     } else {
                         Swal.fire({

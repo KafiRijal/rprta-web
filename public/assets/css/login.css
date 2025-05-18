@@ -1,0 +1,71 @@
+      body {
+            margin-top: 1.2rem !important;
+            background-image: url(../img/hero/hero2-bg.png);
+        }
+
+        @media (min-width: 992px) {
+            body {
+                margin-top: 0 !important;
+            }
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader {
+            width: 50px;
+            aspect-ratio: 1;
+            display: grid;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            grid-area: 1/1;
+            --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+            background:
+                var(--c) 50% 0,
+                var(--c) 50% 100%,
+                var(--c) 100% 50%,
+                var(--c) 0 50%;
+            background-size: 12px 12px;
+            animation: l12 1s infinite;
+        }
+
+        .loader::before {
+            margin: 4px;
+            filter: hue-rotate(45deg);
+            background-size: 8px 8px;
+            animation-timing-function: linear
+        }
+
+        @keyframes l12 {
+            100% {
+                transform: rotate(.5turn)
+            }
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f2f5;
+        }
+
+        .card-login {
+            width: 100%;
+            max-width: 420px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            background-color: #ffffff;
+        }
