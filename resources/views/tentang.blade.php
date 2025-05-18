@@ -84,7 +84,7 @@
                                         <div class="thumb">
                                             <img
                                                 style="width: 100%; height:100%;"
-                                                src="{{ asset($pt->image ? 'foto_user/' . $pt->image : 'foto_user/user.jpg') }}"
+                                                src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
                                                 alt="img">
                                         </div>
                                     </div>
