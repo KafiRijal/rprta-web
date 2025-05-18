@@ -23,7 +23,7 @@
 <body class="login-wrapper">
     <div class="card card-login">
         <div class="text-center mb-4">
-            <a href="{{ url('/admin/dashboard') }}"
+            <a href="{{ url('/') }}"
                 class="header-logo d-flex align-items-center justify-content-center">
                 <img src="{{ asset('assets/img/logo/rptra.png') }}" alt="logo-img" style="height: 50px;">
                 <span class="logo-text ms-2 fw-bold" style="color:#000">RPTRA AN NUR</span>
