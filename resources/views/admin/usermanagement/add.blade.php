@@ -42,10 +42,6 @@
                                     <label for="notelp" class="form-label">No Telepon</label>
                                     <input type="number" class="form-control" id="notelp" placeholder="No Telepon">
                                 </div>
-                                <div class="mb-3 col-md-6 col-lg-6">
-                                    <label for="alamat" class="form-label">Alamat</label>
-                                    <textarea class="form-control" id="alamat" rows="1"> </textarea>
-                                </div>
 
                                 <div class="mb-3 col-md-6 col-lg-6">
                                     <label for="role_id" class="form-label">Role</label>
@@ -58,8 +54,23 @@
                                 </div>
 
                                 <div class="mb-3 col-md-6 col-lg-6">
+                                    <label for="jabatan_id" class="form-label">Jabatan</label>
+                                    <select id="jabatan_id" name="jabatan_id" class="form-control">
+                                        <option value="">Pilih Jabatan</option>
+                                        @foreach ($jabatan as $item)
+                                            <option value="{{ $item->id }}">{{ $item->jabatan }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="mb-3 col-md-6 col-lg-6">
                                     <label for="foto" class="form-label">Foto</label>
                                     <input type="file" id="foto" name="foto" class="form-control">
+                                </div>
+
+                                <div class="mb-3 col-md-12 col-lg-12">
+                                    <label for="alamat" class="form-label">Alamat</label>
+                                    <textarea class="form-control" id="alamat" rows="1"> </textarea>
                                 </div>
 
                                 <div class="col-md-6">
@@ -116,6 +127,7 @@
             formData.append('notelp', $('#notelp').val());
             formData.append('alamat', $('#alamat').val());
             formData.append('password', $('#password').val());
+            formData.append('jabatan_id', $('#jabatan_id').val());
             formData.append('password_confirmation', $('#password_confirmation').val());
             formData.append('foto', fotoFile ? fotoFile : '');
 

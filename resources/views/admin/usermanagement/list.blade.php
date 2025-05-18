@@ -37,7 +37,7 @@
                                     <th>No</th>
                                     <th>Nama</th>
                                     <th>Email</th>
-                                    <th>No Telp</th>
+                                    <th>Jabatan</th>
                                     <th class="text-center">Role</th>
                                     <th class="text-center">Aksi</th>
                                 </tr>
@@ -78,15 +78,20 @@
                         data: 'email',
                     },
                     {
-                        data: 'notelp',
+                        data: 'jabatan',
+                        render: function(data, type, row, meta) {
+                            if (data) {
+                                return data;
+                            } else {
+                                return `-`;
+                            }
+                        }
                     },
                     {
                         data: 'role',
                         className: "text-center",
                         render: function(data, type, row, meta) {
-                            if (data === 'Orang Tua') {
-                                return `<span class="badge bg-warning-subtle text-warning fw-semibold">${data}</span>`;
-                            } else if (data === 'Tenaga Medis') {
+                            if (data === 'Petugas') {
                                 return `<span class="badge bg-info-subtle text-info fw-semibold">${data}</span>`;
                             } else if (data === 'Administrator') {
                                 return `<span class="badge bg-secondary-subtle text-secondary fw-semibold">${data}</span>`;

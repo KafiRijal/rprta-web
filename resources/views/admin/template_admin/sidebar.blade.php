@@ -44,6 +44,13 @@
                             <span> UP2K </span>
                         </a>
                     </li>
+                    
+                    <li>
+                        <a href="{{ url('admin/kontak') }}" class="tp-link">
+                            <i data-feather="user"></i>
+                            <span> Kontak Masuk </span>
+                        </a>
+                    </li>
                 @endif
 
                 @if (Auth::user()->role->id == 1)
@@ -53,20 +60,6 @@
                         <a href="{{ url('admin/usermanagement') }}" class="tp-link">
                             <i data-feather="users"></i>
                             <span> User Management </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ url('/faq') }}" class="tp-link">
-                            <i data-feather="package"></i>
-                            <span> FAQ </span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ url('kontak') }}" class="tp-link">
-                            <i data-feather="user"></i>
-                            <span> Kontak Masuk </span>
                         </a>
                     </li>
                 @endif

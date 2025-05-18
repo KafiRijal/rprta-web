@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Jabatan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -18,21 +19,26 @@ class UsermanagementController extends Controller
     public function tambah_user()
     {
         $role = Role::select('id', 'name')->get();
+        $jabatan = Jabatan::select('id', 'jabatan')->get();
+
         $data = [
-            'role' => $role
+            'role' => $role,
+            'jabatan' => $jabatan
         ];
 
         return view('admin/usermanagement/add', $data);
     }
-    
+
     public function edit_user($id)
     {
         $user = User::findOrFail($id);
+        $jabatan = Jabatan::select('id', 'jabatan')->get();
         $role = Role::select('id', 'name')->get();
 
         $data = [
             "user" => $user,
-            "role" => $role
+            "role" => $role,
+            "jabatan" => $jabatan
         ];
 
         return view('admin/usermanagement/edit', $data);
@@ -40,17 +46,18 @@ class UsermanagementController extends Controller
 
     public function _list_user()
     {
-        $monitoring = User::with('role:id,name')->get();
+        $users = User::with(['role:id,name', 'jabatan:id,jabatan'])->get();
 
-        $data = $monitoring->map(function ($item) {
+        $data = $users->map(function ($user) {
             return [
-                'id' => $item->id,
-                'nama' => $item->nama,
-                'email' => $item->email,
-                'notelp' => $item->notelp,
-                'role' => $item->role->name,
+                'id' => $user->id,
+                'nama' => $user->nama,
+                'email' => $user->email,
+                'jabatan' => optional($user->jabatan)->jabatan, 
+                'role' => optional($user->role)->name,
             ];
         });
+
 
         return response()->json([
             'data' => $data
@@ -58,13 +65,14 @@ class UsermanagementController extends Controller
     }
 
     public function _tambah_user(Request $request)
-    {   
+    {
         if ($request->foto === '') {
             $request->merge(['foto' => null]);
         }
 
         $messages = [
             'role_id.required' => 'Role wajib diisi.',
+            'jabatan_id.required' => 'Jabatan wajib diisi.',
             'nama.required' => 'Nama wajib diisi.',
             'email.required' => 'Email wajib diisi.',
             'email.email' => 'Email harus berupa format email yang valid.',
@@ -77,7 +85,7 @@ class UsermanagementController extends Controller
             'alamat.required' => 'Alamat wajib diisi.',
             'foto.max' => 'Foto maksimal 10MB.',
         ];
-        
+
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -90,8 +98,9 @@ class UsermanagementController extends Controller
             'notelp' => 'required',
             'alamat' => 'required',
             'role_id' => 'required',
+            'jabatan_id' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:10240',
-        ], $messages);     
+        ], $messages);
 
         if ($validator->fails()) {
             return response()->json([
@@ -105,14 +114,14 @@ class UsermanagementController extends Controller
 
             if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
                 $encryptedName = md5($request->nama . $request->email);
-                $fotoName = substr($encryptedName, 0, 40); 
+                $fotoName = substr($encryptedName, 0, 40);
                 $fotoExtension = $request->file('foto')->getClientOriginalExtension();
-                $fotoNameWithPrefix = time() . '_' . $fotoName; 
+                $fotoNameWithPrefix = time() . '_' . $fotoName;
                 $foto = $request->file('foto');
                 $foto->move(public_path('foto_user'), $fotoNameWithPrefix . '.' . $fotoExtension);
-                $fotoNameWithPrefix .= '.' . $fotoExtension; 
+                $fotoNameWithPrefix .= '.' . $fotoExtension;
             }
-            
+
             User::create([
                 'nama' => $request->nama,
                 'email' => $request->email,
@@ -120,9 +129,10 @@ class UsermanagementController extends Controller
                 'notelp' => $request->notelp,
                 'alamat' => $request->alamat,
                 'role_id' => $request->role_id,
+                'jabatan_id' => $request->jabatan_id,
                 'foto' => $fotoNameWithPrefix,
             ]);
-    
+
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data user berhasil disimpan.',
@@ -131,7 +141,7 @@ class UsermanagementController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Terjadi kesalahan saat menyimpan data. Silakan coba lagi.',
-            ], 500); 
+            ], 500);
         }
     }
 
@@ -140,9 +150,10 @@ class UsermanagementController extends Controller
         if ($request->foto === '') {
             $request->merge(['foto' => null]);
         }
-        
+
         $messages = [
             'role_id.required' => 'Role wajib diisi.',
+            'jabatan_id.required' => 'Jabatan wajib diisi.',
             'nama.required' => 'Nama wajib diisi.',
             'email.required' => 'Email wajib diisi.',
             'email.email' => 'Email harus berupa format email yang valid.',
@@ -151,47 +162,49 @@ class UsermanagementController extends Controller
             'alamat.required' => 'Alamat wajib diisi.',
             'foto.max' => 'Foto maksimal 10MB.',
         ];
-    
+
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|max:255',
             'email' => "required|string|email|max:255|unique:users,email,{$request->id}",
             'notelp' => 'required',
             'alamat' => 'required',
             'role_id' => 'required',
+            'jabatan_id' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:10240',
         ], $messages);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
                 'errors' => $validator->errors()
             ], 422);
         }
-    
+
         try {
             $user = User::findOrFail($request->id);
-    
+
             $user->nama = $request->nama;
             $user->email = $request->email;
             $user->notelp = $request->notelp;
             $user->alamat = $request->alamat;
             $user->role_id = $request->role_id;
-    
+            $user->jabatan_id = $request->jabatan_id;
+
             if ($request->hasFile('foto')) {
                 if ($user->foto && file_exists(public_path('foto_user/' . $user->foto))) {
                     unlink(public_path('foto_user/' . $user->foto));
                 }
-    
+
                 $encryptedName = md5($request->nama . $request->email);
                 $fotoName = substr($encryptedName, 0, 40);
                 $fotoExtension = $request->file('foto')->getClientOriginalExtension();
                 $fotoNameWithPrefix = time() . '_' . $fotoName;
                 $foto = $request->file('foto');
                 $foto->move(public_path('foto_user'), $fotoNameWithPrefix . '.' . $fotoExtension);
-    
+
                 $user->foto = $fotoNameWithPrefix . '.' . $fotoExtension;
             }
-    
+
             if ($request->filled('password')) {
                 $validator = Validator::make($request->all(), [
                     'password' => 'nullable|min:8|confirmed',
@@ -199,19 +212,19 @@ class UsermanagementController extends Controller
                     'password.min' => 'Password harus memiliki minimal 8 karakter.',
                     'password.confirmed' => 'Konfirmasi password tidak cocok.',
                 ]);
-    
+
                 if ($validator->fails()) {
                     return response()->json([
                         'status' => 'error',
                         'errors' => $validator->errors()
                     ], 422);
                 }
-    
+
                 $user->password = Hash::make($request->password);
             }
-    
+
             $user->save();
-    
+
             return response()->json([
                 'status' => 'success',
                 'message' => 'Data user berhasil diupdate.',
