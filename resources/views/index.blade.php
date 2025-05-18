@@ -235,13 +235,13 @@
                                     <div class="team-image">
                                         <div class="thumb">
                                             <img style="width: 100%; height:100%;"
-                                                src="{{ asset($pt->image ? 'foto_user/' . $pt->image : 'foto_user/user.jpg') }}"
+                                                src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
                                                 alt="img">
                                         </div>
                                     </div>
                                     <div class="team-content text-center">
                                         <h6><a href="#">{{ $pt->nama }}</a></h6>
-                                        <span style="font-size: 12px">{{ $pt->jabatan->jabatan }}</span>
+                                        <span style="font-size: 10px">{{ $pt->jabatan->jabatan }}</span>
                                     </div>
                                 </div>
                             </div>
