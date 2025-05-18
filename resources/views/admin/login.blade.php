@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Pantau Tumbuh</title>
+    <title>RPTRA AN NUR</title>
+
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/rptra.png') }}">
+
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets_portal/img/favicons/apple-icon.png') }}">
     <link rel="icon" type="image/png" sizes="192x192"
@@ -23,8 +26,7 @@
 <body class="login-wrapper">
     <div class="card card-login">
         <div class="text-center mb-4">
-            <a href="{{ url('/') }}"
-                class="header-logo d-flex align-items-center justify-content-center">
+            <a href="{{ url('/') }}" class="header-logo d-flex align-items-center justify-content-center">
                 <img src="{{ asset('assets/img/logo/rptra.png') }}" alt="logo-img" style="height: 50px;">
                 <span class="logo-text ms-2 fw-bold" style="color:#000">RPTRA AN NUR</span>
             </a>

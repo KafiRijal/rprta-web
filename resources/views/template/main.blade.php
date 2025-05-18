@@ -8,7 +8,7 @@
     <meta name="author" content="gramentheme">
     <meta name="description" content="Bookle - Book Store WooCommerce Html Template ">
     <!-- ======== Page title ============ -->
-    <title>RPTRA An Nur</title>
+    <title>RPTRA AN NUR</title>
     @include('template/styles')
 </head>
 

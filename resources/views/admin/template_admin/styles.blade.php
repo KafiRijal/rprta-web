@@ -3,6 +3,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("assets_portal/img/favicons/apple-icon.png") }}">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ asset("assets_portal/img/favicons/android-chrome-192x192.png") }}">
 
+<link rel="shortcut icon" href="{{ asset('assets/img/logo/rptra.png') }}">
 <link href="{{ asset("assets_admin/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css") }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset("assets_admin/libs/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css") }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset("assets_admin/libs/datatables.net-keytable-bs5/css/keyTable.bootstrap5.min.css") }}" rel="stylesheet" type="text/css" />

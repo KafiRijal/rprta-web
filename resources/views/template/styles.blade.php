@@ -1,5 +1,5 @@
 <!--<< Favcion >>-->
-<link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
+<link rel="shortcut icon" href="{{ asset('assets/img/logo/rptra.png') }}">
 <!--<< Bootstrap min.css >>-->
 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 <!--<< All Min Css >>-->
