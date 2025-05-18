@@ -15,9 +15,9 @@
                                 untuk mendukung tumbuh kembang anak dan interaksi sosial warga.
                             </p>
                             <div class="form-clt wow fadeInUp my-2" data-wow-delay=".9s">
-                                <button type="submit" class="theme-btn mb-3">
-                                    Tentang Kami <i class="fa-solid fa-arrow-right-long"></i>
-                                </button>
+                                <a href="{{ url('/tentang') }}" class="theme-btn mb-3">
+                                    Masuk <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -234,8 +234,7 @@
                                 <div class="team-box-items">
                                     <div class="team-image">
                                         <div class="thumb">
-                                            <img
-                                                style="width: 100%; height:100%;"
+                                            <img style="width: 100%; height:100%;"
                                                 src="{{ asset($pt->image ? 'foto_user/' . $pt->image : 'foto_user/user.jpg') }}"
                                                 alt="img">
                                         </div>
