@@ -79,19 +79,25 @@
                     @if (!empty($petugas))
                         @foreach ($petugas as $pt)
                             <div class="swiper-slide">
-                                <div class="team-box-items">
+                                <div class="team-box-items"
+                                    style="min-height: 320px; display: flex; flex-direction: column; justify-content: space-between;">
                                     <div class="team-image">
                                         <div class="thumb">
-                                            <img
-                                                style="width: 100%; height:100%;"
+                                            <img style="width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: top; border-radius: 5px;"
                                                 src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
                                                 alt="img">
                                         </div>
                                     </div>
-                                    <div class="team-content text-center">
-                                        <h6><a href="#">{{ $pt->nama }}</a></h6>
-                                        <span style="font-size: 12px">{{ $pt->jabatan->jabatan }}</span>
+
+                                    <div class="team-content text-center" style="margin-top: 10px;">
+                                        <h6 style="margin: 5px 0 2px 0; font-size: 16px; font-weight: 600;">
+                                            <a href="#"
+                                                style="text-decoration: none; color: inherit;">{{ $pt->nama }}</a>
+                                        </h6>
+                                        <span
+                                            style="font-size: 11px; white-space: nowrap;">{{ $pt->jabatan->jabatan }}</span>
                                     </div>
+
                                 </div>
                             </div>
                         @endforeach

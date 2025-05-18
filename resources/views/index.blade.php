@@ -37,8 +37,7 @@
             <div class="row g-4">
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="banner-book-card-items bg-cover"
-                       style="background-image: url('{{ asset('assets/img/banner/banner-1.jpg') }}');"
->
+                        style="background-image: url('{{ asset('assets/img/banner/banner-1.jpg') }}');">
                         <div class="book-shape">
                         </div>
                         <div class="banner-book-content">
@@ -50,7 +49,8 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="banner-book-card-items bg-cover" style="background-image: url('{{ asset('assets/img/banner/banner-2.jpg') }}');">
+                    <div class="banner-book-card-items bg-cover"
+                        style="background-image: url('{{ asset('assets/img/banner/banner-2.jpg') }}');">
                         <div class="book-shape">
                         </div>
                         <div class="banner-book-content">
@@ -65,7 +65,8 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="banner-book-card-items bg-cover" style="background-image: url('{{ asset('assets/img/banner/banner-3.jpg') }}');">
+                    <div class="banner-book-card-items bg-cover"
+                        style="background-image: url('{{ asset('assets/img/banner/banner-3.jpg') }}');">
                         <div class="book-shape">
                             {{-- <img src="{{ asset('assets/img/banner/banner-3.jpg') }}" alt=""> --}}
                         </div>
@@ -232,10 +233,9 @@
                                     style="min-height: 320px; display: flex; flex-direction: column; justify-content: space-between;">
                                     <div class="team-image">
                                         <div class="thumb">
-<img style="width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: top; border-radius: 5px;"
-    src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
-    alt="img">
-
+                                            <img style="width: 100%; aspect-ratio: 5 / 6; object-fit: cover; object-position: top; border-radius: 5px;"
+                                                src="{{ asset($pt->foto ? 'foto_user/' . $pt->foto : 'foto_user/user.jpg') }}"
+                                                alt="img">
                                         </div>
                                     </div>
 
