@@ -59,9 +59,8 @@
                             </p>
                             <div class="social-icon d-flex align-items-center">
                                 <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://x.com/"><i class="fab fa-instagram"></i></a>
                                 <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -72,12 +71,6 @@
                             <h3>Menu</h3>
                         </div>
                         <ul class="list-area">
-                            <li>
-                                <a href="{{ url('tentang') }}">
-                                    <i class="fa-solid fa-chevrons-right"></i>
-                                    Tentang Kami
-                                </a>
-                            </li>
                             <li>
                                 <a href="{{ url('buku') }}">
                                     <i class="fa-solid fa-chevrons-right"></i>
@@ -94,6 +87,12 @@
                                 <a href="{{ url('up2k') }}">
                                     <i class="fa-solid fa-chevrons-right"></i>
                                     UP2K
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('tentang') }}">
+                                    <i class="fa-solid fa-chevrons-right"></i>
+                                    Tentang Kami
                                 </a>
                             </li>
                             <li>

@@ -54,12 +54,6 @@
                                 <h6>Informasi UP2K</h6>
                             </a>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <a href="#review" data-bs-toggle="tab" class="nav-link" aria-selected="false" tabindex="-1"
-                                role="tab">
-                                <h6>Ulasan</h6>
-                            </a>
-                        </li>
                     </ul>
                     <div class="tab-content">
                         <div id="description" class="tab-pane fade show active" role="tabpanel">
@@ -123,80 +117,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                        <div id="review" class="tab-pane fade" role="tabpanel">
-                            <div class="review-items">
-                                <div class="review-wrap-area d-flex gap-4">
-                                    <div class="review-thumb">
-                                        <img src="assets/img/shop-details/review.png" alt="img">
-                                    </div>
-                                    <div class="review-content">
-                                        <div
-                                            class="head-area d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                                            <div class="cont">
-                                                <h5><a href="news-details.html">Leslie Alexander</a></h5>
-                                                <span>February 10, 2024 at 2:37 pm</span>
-                                            </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <p class="mt-30 mb-4">
-                                            Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi
-                                            architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem
-                                            Ipsum is <br> simply dummy
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="review-title mt-5 py-15 mb-30">
-                                    <h4>Rating</h4>
-                                    <div class="rate-now d-flex align-items-center">
-                                        <p>Rating Kamu</p>
-                                        <div class="star">
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-form">
-                                    <form action="#" id="contact-form" method="POST">
-                                        <div class="row g-4">
-                                            <div class="col-lg-6">
-                                                <div class="form-clt">
-                                                    <span>Nama</span>
-                                                    <input type="text" name="name" id="name"
-                                                        placeholder="Nama Kamu">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-clt">
-                                                    <span>Email</span>
-                                                    <input type="text" name="email" id="email"
-                                                        placeholder="Email Kamu">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".8">
-                                                <div class="form-clt">
-                                                    <span>Ulasan</span>
-                                                    <textarea name="message" id="message" placeholder="Ulasan Kamu"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".9">
-                                                <button type="submit" class="theme-btn">
-                                                    Kirim
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     </div>
