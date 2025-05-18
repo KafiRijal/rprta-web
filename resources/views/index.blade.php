@@ -90,7 +90,7 @@
     </section>
 
     <!-- Section Buku -->
-    <section class="shop-section section-padding fix pt-0">
+    <section class="shop-section section-padding fix pt-2 mt-5">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
@@ -132,7 +132,7 @@
     </section>
 
     <!-- Section Tanaman -->
-    <section class="shop-section section-padding fix pt-0 mt-5">
+    <section class="shop-section section-padding fix pt-2 mt-5">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
@@ -173,7 +173,7 @@
     </section>
 
     <!-- Section Up2k -->
-    <section class="shop-section section-padding fix pt-0 mt-5">
+    <section class="shop-section section-padding fix pt-2 mt-5">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
