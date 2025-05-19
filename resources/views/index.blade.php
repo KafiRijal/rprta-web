@@ -76,7 +76,7 @@
                                 <br>
                                 Gross Mart
                             </h2>
-                            <h6>Berisi daftar produk dan jasa UMKM binaan RPTRA An Nur untuk mendukung usaha warga sekitar.
+                            <h6>Berisi daftar produk dan jasa UMKM Binaan Jakpreneur dan UP2K Kelurahan Paseban.
                             </h6>
                             <a href="{{ url('up2k') }}" class="theme-btn white-bg">Lihat Sekarang <i
                                     class="fa-solid fa-arrow-right-long"></i></a>
@@ -224,6 +224,8 @@
                 <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
                 <button class="array-next"><i class="fal fa-arrow-right"></i></button>
             </div>
+            
+            
             <div class="swiper team-slider">
                 <div class="swiper-wrapper">
                     @if (!empty($petugas))
@@ -254,6 +256,8 @@
                     @endif
                 </div>
             </div>
+            
+            
         </div>
     </section>
 @endsection

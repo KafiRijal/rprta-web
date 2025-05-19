@@ -15,6 +15,61 @@
     --box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.06);
 }
 
+.team-box-items {
+    min-height: 320px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 10px !important;
+}
+
+.team-image .thumb {
+    width: 100% !important;
+}
+
+.team-photo {
+    width: 100% !important;
+    aspect-ratio: 5 / 6 !important;
+    object-fit: cover !important;
+    object-position: top !important;
+    border-radius: 5px !important;
+}
+
+.team-content {
+    text-align: center !important;
+    margin-top: 10px !important;
+}
+
+.team-name {
+    margin: 5px 0 2px 0 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.team-name a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.team-role {
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+}
+
+@media (min-width: 1440px) {
+    .team-box-items {
+        min-height: 360px !important;
+    }
+
+    .team-name {
+        font-size: 1.1rem !important;
+    }
+
+    .team-role {
+        font-size: 0.8rem !important;
+    }
+}
+
 .bold-header2{
      font-weight: 600 !important;
 }
